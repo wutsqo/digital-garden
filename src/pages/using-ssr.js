@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+// eslint-disable-next-line react/prop-types
 const UsingSSR = ({ serverData }) => {
   return (
     <Layout>
@@ -12,6 +13,7 @@ const UsingSSR = ({ serverData }) => {
       <img
         style={{ width: "300px" }}
         alt="A random dog"
+        // eslint-disable-next-line react/prop-types
         src={serverData.message}
       />
       <p>Welcome to a server side rendered page with a random dog photo</p>
@@ -29,6 +31,7 @@ const UsingSSR = ({ serverData }) => {
 
 export default UsingSSR
 
+// eslint-disable-next-line require-jsdoc
 export async function getServerData() {
   try {
     const res = await fetch(`https://dog.ceo/api/breeds/image/random`)
