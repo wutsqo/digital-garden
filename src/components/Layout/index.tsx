@@ -18,22 +18,10 @@ const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+      <div>
+        <main className="container mx-auto min-h-screen">{children}</main>
+        <footer className="container mx-auto py-8 text-center">
+          &copy; {new Date().getFullYear()} Muhammad Urwatil Wutsqo
         </footer>
       </div>
     </>
