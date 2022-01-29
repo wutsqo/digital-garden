@@ -2,6 +2,7 @@ import { Transition } from "@headlessui/react"
 import { Link } from "gatsby"
 import React, { FC, ReactNode, useState } from "react"
 import ThemeToggle from "./themetoggle"
+import tw from "twin.macro"
 
 interface NavLinkProps {
   to: string
@@ -21,10 +22,6 @@ const Navbar = () => {
         <InnerContainer>
           <NavLinkContainer>
             <NavLink to="/">home</NavLink>
-            {/* <NavLink to="/blog">blog</NavLink>
-            <NavLink to="/music">music</NavLink>
-            <NavLink to="/reads">reads</NavLink>
-            <NavLink to="/running">running</NavLink> */}
             <NavLink to="https://resume.wutsqo.me">resume</NavLink>
           </NavLinkContainer>
 
@@ -54,12 +51,8 @@ const Navbar = () => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <MobileMenuContainer>
+        <MobileMenuContainer id="mobile-menu">
           <NavLink to="/">home</NavLink>
-          {/* <NavLink to="/blog">blog</NavLink>
-          <NavLink to="/music">music</NavLink>
-          <NavLink to="/reads">reads</NavLink>
-          <NavLink to="/running">running</NavLink> */}
           <NavLink to="https://resume.wutsqo.me">resume</NavLink>
         </MobileMenuContainer>
       </Transition>
@@ -75,36 +68,11 @@ const Nav: FC = ({ children }) => {
   )
 }
 
-const Container: FC = ({ children }) => {
-  return (
-    <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-      {children}
-    </div>
-  )
-}
-
-const InnerContainer: FC = ({ children }) => {
-  return <div className="flex items-center justify-end">{children}</div>
-}
-
-const NavLinkContainer: FC = ({ children }) => {
-  return <div className="hidden md:flex mr-4 ml-10">{children}</div>
-}
-
-const BurgerContainer: FC = ({ children }) => {
-  return <div className="mr-2 flex items-center md:hidden">{children}</div>
-}
-
-const MobileMenuContainer: FC = ({ children }) => {
-  return (
-    <div
-      className="md:hidden px-4 pt-2 pb-3 flex flex-col text-center"
-      id="mobile-menu"
-    >
-      {children}
-    </div>
-  )
-}
+const Container = tw.div`max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16`
+const InnerContainer = tw.div`flex items-center justify-end`
+const NavLinkContainer = tw.div`hidden md:flex mr-4 ml-10`
+const BurgerContainer = tw.div`mr-2 flex items-center md:hidden`
+const MobileMenuContainer = tw.div`md:hidden px-4 pt-2 pb-3 flex flex-col text-center`
 
 const NavLink: FC<NavLinkProps> = ({ to, children }) => {
   if (to.startsWith("http"))
