@@ -18,9 +18,11 @@ const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
-        <main className="container mx-auto min-h-screen pt-16">{children}</main>
-        <footer className="container mx-auto py-8 text-center">
+      <div className="bg-pink-50 dark:bg-black text-black dark:text-white">
+        <main className="container mx-auto w-full min-h-screen pt-16 p-4">
+          {children}
+        </main>
+        <footer className="container mx-auto py-8 text-center text-sm">
           &copy; {new Date().getFullYear()} Muhammad Urwatil Wutsqo
         </footer>
       </div>
