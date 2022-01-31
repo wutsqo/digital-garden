@@ -4,10 +4,11 @@ import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 import { SiDuolingo } from "@react-icons/all-files/si/SiDuolingo"
 import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope"
 import tw from "twin.macro"
+import SpotifyWidgetSmall from "../Spotify/Widget/small"
 
 const HomeComponent: FC<{}> = () => {
   return (
-    <Container style={{ paddingTop: "25vh" }}>
+    <Container style={{ paddingTop: "20vh" }}>
       <h1 className="text-3xl">Hello!</h1>
       <h2 className="text-5xl">I am Wutsqo</h2>
       <br />
@@ -29,6 +30,10 @@ const HomeComponent: FC<{}> = () => {
           <SiDuolingo color="#7ac70c" />
         </SocialButton>
       </SocialContainer>
+
+      <div style={{ marginTop: "12vh" }}>
+        <SpotifyWidgetSmall />
+      </div>
     </Container>
   )
 }
