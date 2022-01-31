@@ -39,10 +39,15 @@ const handler = async (
   const nowPlaying = await axios.get(nowPlayingEndpoint, options)
 
   if (nowPlaying.data.item) {
-    res.send({ item: nowPlaying.data.item, type: "current" })
+    res.send(JSON.stringify({ item: nowPlaying.data.item, type: "current" }))
   } else {
     const recentlyPlayed = await axios.get(recentlyPlayedEndpoint, options)
-    res.send({ item: recentlyPlayed.data.items[0].track, type: "recent" })
+    res.send(
+      JSON.stringify({
+        item: recentlyPlayed.data.items[0].track,
+        type: "recent",
+      })
+    )
   }
 }
 

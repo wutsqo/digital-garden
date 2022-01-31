@@ -4,6 +4,6 @@ export default function handler(
   req: GatsbyFunctionRequest,
   res: GatsbyFunctionResponse
 ) {
-  console.log(req)
+  console.log(process.env.SITE_URL)
   res.status(200).send("OK")
 }
