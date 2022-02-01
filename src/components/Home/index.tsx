@@ -26,7 +26,7 @@ const HomeComponent: FC<{}> = () => {
           <FaDiscord color="#7289d9" />
         </SocialButton>
 
-        <SocialButton href="https://www.duolingo.com/profile/kafkalate">
+        <SocialButton href="https://www.duolingo.com/profile/kafkanium">
           <SiDuolingo color="#7ac70c" />
         </SocialButton>
       </SocialContainer>
