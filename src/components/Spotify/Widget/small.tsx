@@ -22,13 +22,19 @@ const SpotifyWidgetSmall: FC = () => {
     return () => clearInterval(interval)
   }, [])
 
-  if (data.item)
-    return (
-      <div className="relative p-1 flex items-center max-w-xs text-sm">
-        <FaSpotify className="-ml-1 text-2xl flex-shrink-0" style={{ color: "#1DB954" }} />
-        <div className="max-h-12 px-2 ml-2 border-l-2 border-black dark:border-pink-900 items-center flex">
+  return (
+    <div className="relative p-1 flex items-center max-w-xs text-sm">
+      <FaSpotify
+        className="-ml-1 text-2xl flex-shrink-0"
+        style={{ color: "#1DB954" }}
+      />
+      <div className="max-h-12 px-2 ml-2 border-l-2 border-black dark:border-pink-900 items-center h-10 flex">
+        {data?.item ? (
           <div>
-            <div className="w-64 md:w-96 font-semibold truncate leading-tight">
+            <div
+              className="w-64 md:w-96 font-semibold truncate leading-tight fadeInUp"
+              key={data.item.id}
+            >
               <a
                 href={data.item.album.external_urls.spotify}
                 className="hover:underline"
@@ -38,7 +44,7 @@ const SpotifyWidgetSmall: FC = () => {
                 {data?.item?.name}
               </a>
             </div>
-            <div className="font-light">
+            <div className="font-light fadeInUp" key={data.item.artists[0].id}>
               <a
                 href={data.item.artists[0].external_urls.spotify}
                 target="_blank"
@@ -49,11 +55,12 @@ const SpotifyWidgetSmall: FC = () => {
               </a>
             </div>
           </div>
-        </div>
+        ) : (
+          <div>retrieving listening data...</div>
+        )}
       </div>
-    )
-
-  return <div></div>
+    </div>
+  )
 }
 
 export default SpotifyWidgetSmall
