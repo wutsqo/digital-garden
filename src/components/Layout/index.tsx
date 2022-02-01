@@ -21,7 +21,7 @@ const Layout: React.FC<DataProps> = ({ children, noFooter = false }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div className="bg-pink-50 dark:bg-black text-black dark:text-white">
+      <div className="bg-pink-100 dark:bg-black text-black dark:text-white">
         <main className="container mx-auto w-full min-h-screen pt-16 p-4">
           {children}
         </main>
