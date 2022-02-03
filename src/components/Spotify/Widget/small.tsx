@@ -7,7 +7,7 @@ const SpotifyWidgetSmall: FC = () => {
 
   const fetchData = () => {
     axios.get("/api/spotify-recent").then((response) => {
-      setData(response.data)
+      setData(response.data?.item)
     })
   }
 
@@ -29,35 +29,39 @@ const SpotifyWidgetSmall: FC = () => {
         style={{ color: "#1DB954" }}
       />
       <div className="max-h-12 px-2 ml-2 border-l-2 border-black dark:border-pink-900 items-center h-10 flex">
-        {data?.item ? (
-          <div>
+        <div>
+          {data.id ? (
             <div
               className="w-64 md:w-96 font-semibold truncate leading-tight fadeInUp"
-              key={data.item.id}
+              key={data.id}
             >
               <a
-                href={data.item.album.external_urls.spotify}
+                href={data.album.external_urls.spotify}
                 className="hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {data?.item?.name}
+                {data.name}
               </a>
             </div>
-            <div className="font-light fadeInUp" key={data.item.artists[0].id}>
+          ) : (
+            <div className="h-4 w-36 ph-child" />
+          )}
+          {data?.id ? (
+            <div className="font-light fadeInUp" key={data.artists[0].id}>
               <a
-                href={data.item.artists[0].external_urls.spotify}
+                href={data.artists[0].external_urls.spotify}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
-                {data?.item.artists[0].name}
+                {data.artists[0].name}
               </a>
             </div>
-          </div>
-        ) : (
-          <div>retrieving listening data...</div>
-        )}
+          ) : (
+            <div className="h-4 w-32 ph-child mt-1" />
+          )}
+        </div>
       </div>
     </div>
   )

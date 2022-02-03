@@ -31,6 +31,10 @@ h6 {
   @apply text-base font-medium;
 }
 
+.ph-child {
+  @apply bg-white dark:bg-gray-700 animate-pulse;
+}
+
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
