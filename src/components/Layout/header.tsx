@@ -7,7 +7,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ siteTitle }) => (
-  <header className="sticky top-0">
+  <header>
     <Navbar />
   </header>
 )
