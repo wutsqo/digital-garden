@@ -5,9 +5,14 @@ import Header from "./header"
 
 type DataProps = {
   noFooter?: boolean
+  bgImage?: string
 }
 
-const Layout: React.FC<DataProps> = ({ children, noFooter = false }) => {
+const Layout: React.FC<DataProps> = ({
+  children,
+  noFooter = false,
+  bgImage,
+}) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -21,7 +26,10 @@ const Layout: React.FC<DataProps> = ({ children, noFooter = false }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div className="bg-pink-100 dark:bg-black text-black dark:text-white">
+      <div
+        className="bg-pink-100 dark:bg-black text-black dark:text-white"
+        style={bgImage ? { backgroundImage: bgImage } : {}}
+      >
         <main className="container mx-auto w-full min-h-screen pt-16 p-4">
           {children}
         </main>
