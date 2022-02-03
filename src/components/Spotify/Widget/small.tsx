@@ -32,7 +32,7 @@ const SpotifyWidgetSmall: FC = () => {
         <div>
           {data.id ? (
             <div
-              className="w-64 md:w-96 font-semibold truncate leading-tight fadeInUp"
+              className="max-w-xs md:w-96 font-semibold truncate leading-tight fadeInUp"
               key={data.id}
             >
               <a

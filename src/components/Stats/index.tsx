@@ -4,7 +4,7 @@ import tw from "twin.macro"
 import TrackWidget from "../Spotify/Widget/track"
 
 const StatsComponent: FC = () => {
-  const [tracks, setTracks] = useState<any[]>(new Array(8).fill({}))
+  const [tracks, setTracks] = useState<any[]>(new Array(10).fill({}))
 
   useEffect(() => {
     axios.get("/api/spotify-top").then((response) => {
