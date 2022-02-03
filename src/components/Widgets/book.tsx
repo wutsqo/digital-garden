@@ -47,7 +47,7 @@ const BookWidget: FC<Book> = (props) => {
         <div className="absolute bottom-1.5 text-xs flex w-full">
           <StarRatings
             rating={parseInt(rating)}
-            starRatedColor="#FBBF24"
+            starRatedColor="#EFA51D"
             starEmptyColor="#D3D3D3"
             starDimension="15px"
             starSpacing="0px"

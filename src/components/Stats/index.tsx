@@ -3,10 +3,12 @@ import React, { FC, useEffect, useState } from "react"
 import tw from "twin.macro"
 import TrackWidget from "../Spotify/Widget/track"
 import BookWidget from "../Widgets/book"
+import FilmWidget from "../Widgets/film"
 
 const StatsComponent: FC = () => {
   const [tracks, setTracks] = useState<any[]>(new Array(8).fill({}))
   const [books, setBooks] = useState<any[]>(new Array(6).fill({}))
+  const [films, setFilms] = useState<any[]>(new Array(6).fill({}))
 
   useEffect(() => {
     axios.get("/api/spotify-top").then((response) => {
@@ -14,6 +16,9 @@ const StatsComponent: FC = () => {
     })
     axios.get("/api/goodreads-recent").then((response) => {
       setBooks(response.data)
+    })
+    axios.get("/api/letterboxd-recent").then((response) => {
+      setFilms(response.data)
     })
   }, [])
 
@@ -39,7 +44,11 @@ const StatsComponent: FC = () => {
 
       <Section>
         <h4>🎬 Recent watches</h4>
-        <div>coming soon</div>
+        <div className="grid gap-1 mt-2 grid-cols-3 sm:grid-cols-6">
+          {films.map((film, i) => {
+            return <FilmWidget key={i} {...film} />
+          })}
+        </div>
       </Section>
 
       <Section>
