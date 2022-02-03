@@ -64,7 +64,10 @@ const Navbar = () => {
 
 const Nav: FC = ({ children }) => {
   return (
-    <nav className="fixed w-screen z-50 bg-white text-gray-900 dark:text-white dark:bg-black bg-opacity-75 dark:bg-opacity-75 backdrop-blur-lg shadow top-0">
+    <nav
+      className="fixed w-screen z-50 bg-white text-gray-900 dark:text-white dark:bg-black bg-opacity-75 dark:bg-opacity-75 backdrop-blur-lg shadow top-0"
+      style={{ zIndex: 50 }}
+    >
       {children}
     </nav>
   )

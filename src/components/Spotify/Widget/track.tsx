@@ -24,7 +24,7 @@ const TrackWidget: FC<TrackProps> = (props) => {
         !name && "animate-pulse bg-white dark:bg-gray-900"
       } `}
     >
-      <div className={`flex-shrink-0 h-16 w-16  ${!name && "p-2"}`}>
+      <div className={`flex-shrink-0 h-16 w-16`}>
         {name ? (
           <img
             src={album?.images[1]?.url}
@@ -37,8 +37,8 @@ const TrackWidget: FC<TrackProps> = (props) => {
       </div>
       <div className={`w-full ${name ? "pl-4" : "pl-2"}`}>
         <div
-          className={`mt-1.5 ${
-            name ? "w-full" : "bg-pink-300 dark:bg-gray-700 w-8 h-3 "
+          className={`${
+            name ? "w-full mt-1.5" : "bg-pink-300 dark:bg-gray-700 w-8 h-3 mt-2"
           }`}
           style={{ fontSize: "0.625rem", lineHeight: "0.75rem" }}
         >

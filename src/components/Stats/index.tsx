@@ -2,41 +2,55 @@ import axios from "axios"
 import React, { FC, useEffect, useState } from "react"
 import tw from "twin.macro"
 import TrackWidget from "../Spotify/Widget/track"
+import BookWidget from "../Widgets/book"
 
 const StatsComponent: FC = () => {
-  const [tracks, setTracks] = useState<any[]>(new Array(10).fill({}))
+  const [tracks, setTracks] = useState<any[]>(new Array(8).fill({}))
+  const [books, setBooks] = useState<any[]>(new Array(6).fill({}))
 
   useEffect(() => {
     axios.get("/api/spotify-top").then((response) => {
       setTracks(response.data.tracks)
+    })
+    axios.get("/api/goodreads-recent").then((response) => {
+      setBooks(response.data)
     })
   }, [])
 
   return (
     <Container>
       <Section>
-        <h3>Recent top tracks</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-4">
+        <h4>Recent top tracks</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
           {tracks.map((track, i) => {
             return <TrackWidget {...track} key={i} pos={i + 1} />
           })}
         </div>
       </Section>
+
       <Section>
-        <h3>Recent reads</h3>
+        <h4>Recent reads</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
+          {books.map((book, i) => {
+            return <BookWidget key={i} {...book} />
+          })}
+        </div>
+      </Section>
+
+      <Section>
+        <h4>Recent watches</h4>
         <div>coming soon</div>
       </Section>
+
       <Section>
-        <h3>Recent watches</h3>
+        <h4>Recent workouts</h4>
         <div>coming soon</div>
       </Section>
-      <Section>
-        <h3>Recent workouts</h3>
-        <div>coming soon</div>
-      </Section>
+
       <div className="my-8 text-xs">
-        Music data provided by Spotify AB. All images are copyrighted by their
-        respective copyright owners.
+        Music, books, movies, and workouts data are provided by Spotify AB,
+        Goodreads, Letterboxd, and STRAVA respectively. All images are
+        copyrighted by their respective copyright owners.
       </div>
     </Container>
   )

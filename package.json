@@ -25,11 +25,14 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-star-ratings": "^2.3.0",
     "twin.macro": "^2.8.2",
-    "use-sound": "^4.0.1"
+    "use-sound": "^4.0.1",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.5",
+    "@types/react-star-ratings": "^2.3.0",
     "autoprefixer": "^10.4.2",
     "gatsby-plugin-postcss": "^5.5.0",
     "postcss": "^8.4.5",
