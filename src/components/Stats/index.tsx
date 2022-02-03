@@ -15,7 +15,7 @@ const StatsComponent: FC = () => {
   return (
     <Container>
       <Section>
-        <h2>Recent top tracks</h2>
+        <h3>Recent top tracks</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-4">
           {tracks.map((track, i) => {
             return <TrackWidget {...track} key={i} pos={i + 1} />
@@ -23,15 +23,15 @@ const StatsComponent: FC = () => {
         </div>
       </Section>
       <Section>
-        <h2>Recent reads</h2>
+        <h3>Recent reads</h3>
         <div>coming soon</div>
       </Section>
       <Section>
-        <h2>Recent watches</h2>
+        <h3>Recent watches</h3>
         <div>coming soon</div>
       </Section>
       <Section>
-        <h2>Recent workouts</h2>
+        <h3>Recent workouts</h3>
         <div>coming soon</div>
       </Section>
       <div className="my-8 text-xs">
