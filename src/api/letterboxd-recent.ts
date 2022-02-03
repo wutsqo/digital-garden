@@ -22,10 +22,10 @@ export default function handler(
         if (count == 6) break
         const cd = item.description._cdata
         const movie = {
-          title: item["letterboxd:filmTitle"]._text,
-          rating: item["letterboxd:memberRating"]._text,
-          date: item["letterboxd:watchedDate"]._text,
-          link: item.link._text,
+          title: item["letterboxd:filmTitle"]?._text,
+          rating: item["letterboxd:memberRating"]?._text,
+          date: item["letterboxd:watchedDate"]?._text,
+          link: item.link?._text,
           thumb: cd.substring(cd.indexOf('src="') + 5, cd.indexOf('"/>')),
         }
         count++
