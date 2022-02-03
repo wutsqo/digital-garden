@@ -20,7 +20,7 @@ const StatsComponent: FC = () => {
   return (
     <Container>
       <Section>
-        <h4>Recent top tracks</h4>
+        <h4>🎧 Recent top tracks</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
           {tracks.map((track, i) => {
             return <TrackWidget {...track} key={i} pos={i + 1} />
@@ -29,7 +29,7 @@ const StatsComponent: FC = () => {
       </Section>
 
       <Section>
-        <h4>Recent reads</h4>
+        <h4>📚 Recent reads</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
           {books.map((book, i) => {
             return <BookWidget key={i} {...book} />
@@ -38,12 +38,12 @@ const StatsComponent: FC = () => {
       </Section>
 
       <Section>
-        <h4>Recent watches</h4>
+        <h4>🎬 Recent watches</h4>
         <div>coming soon</div>
       </Section>
 
       <Section>
-        <h4>Recent workouts</h4>
+        <h4>💪 Recent workouts</h4>
         <div>coming soon</div>
       </Section>
 
@@ -57,6 +57,6 @@ const StatsComponent: FC = () => {
 }
 
 const Container = tw.div`max-w-screen-md mx-auto pt-8`
-const Section = tw.div`mb-8`
+const Section = tw.div`mb-10`
 
 export default StatsComponent
