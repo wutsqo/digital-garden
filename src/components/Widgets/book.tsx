@@ -43,7 +43,10 @@ const BookWidget: FC<Book> = (props) => {
       </div>
       <div className="px-4 p-1.5 z-0 relative w-full" style={{ zIndex: 0 }}>
         <div className="text-sm font-medium align-middle">{book.title}</div>
-        <div className="text-xs mt-1 text-gray-700"> by {book.author}</div>
+        <div className="text-xs mt-1 text-gray-700 dark:text-gray-300">
+          {" "}
+          by {book.author}
+        </div>
         <div className="absolute bottom-1.5 text-xs flex w-full">
           <StarRatings
             rating={parseInt(rating)}
