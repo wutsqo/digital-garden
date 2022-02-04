@@ -23,6 +23,7 @@ const Navbar = () => {
           <NavLinkContainer>
             <NavLink to="/">home</NavLink>
             <NavLink to="/stats">stats</NavLink>
+            <NavLink to="/journal">journal</NavLink>
             <NavLink to="https://resume.wutsqo.me">resume</NavLink>
           </NavLinkContainer>
 
@@ -55,6 +56,7 @@ const Navbar = () => {
         <MobileMenuContainer id="mobile-menu">
           <NavLink to="/">home</NavLink>
           <NavLink to="/stats">stats</NavLink>
+          <NavLink to="/journal">journal</NavLink>
           <NavLink to="https://resume.wutsqo.me">resume</NavLink>
         </MobileMenuContainer>
       </Transition>
