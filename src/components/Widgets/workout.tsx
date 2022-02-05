@@ -19,7 +19,7 @@ const WorkoutWidget: FC<Workout> = (props) => {
 
   if (!name)
     return (
-      <div className="flex h-20 animate-pulse bg-white dark:bg-gray-900"></div>
+      <div className="flex h-14 animate-pulse bg-white dark:bg-gray-900"></div>
     )
 
   return (
@@ -27,7 +27,7 @@ const WorkoutWidget: FC<Workout> = (props) => {
       href={`https://www.strava.com/activities/${id}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="h-20 px-1 md:px-2 py-1 w-full hover:bg-white dark:hover:bg-pink-900 hover:shadow flex gap-1"
+      className="h-14 px-1 md:px-2 py-1 w-full hover:bg-white dark:hover:bg-pink-900 hover:shadow flex gap-1"
     >
       <div className="flex-shrink-0 pt-1">
         {type === "Run" && <BiRun />}
@@ -37,7 +37,7 @@ const WorkoutWidget: FC<Workout> = (props) => {
       <div>
         <div className="font-medium">{name}</div>
         <div className="text-xs font-light">
-          {moment(date).format("MMM DD")} |{" "}
+          {moment(date).format("DD MMM")} |{" "}
           {distance > 0 && <span>{(distance / 1000).toFixed(2)}km | </span>}
           {(elapsed_time / 60).toFixed(0)}min.
         </div>

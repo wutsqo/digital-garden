@@ -50,7 +50,7 @@ const FilmWidget: FC<Film> = (props) => {
             starSpacing="0px"
           />
         </div>
-        <div className="text-xs">{moment(date).format("MMM DD")}</div>
+        <div className="text-xs">{moment(date).format("DD MMM")}</div>
       </div>
     </a>
   )
