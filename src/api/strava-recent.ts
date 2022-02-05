@@ -35,7 +35,7 @@ const handler = async (
       distance: activity.distance,
       elapsed_time: activity.elapsed_time,
       map: activity.map.summary_polyline,
-      date: activity.start_date_local,
+      date: activity.start_date,
     }
     activities.push(data)
   }
