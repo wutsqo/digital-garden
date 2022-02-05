@@ -4,11 +4,13 @@ import tw from "twin.macro"
 import TrackWidget from "../Spotify/Widget/track"
 import BookWidget from "../Widgets/book"
 import FilmWidget from "../Widgets/film"
+import WorkoutWidget from "../Widgets/workout"
 
 const StatsComponent: FC = () => {
   const [tracks, setTracks] = useState<any[]>(new Array(8).fill({}))
   const [books, setBooks] = useState<any[]>(new Array(6).fill({}))
   const [films, setFilms] = useState<any[]>(new Array(6).fill({}))
+  const [workouts, setWorkouts] = useState<any>(new Array(4).fill({}))
 
   useEffect(() => {
     axios.get("/api/spotify-top").then((response) => {
@@ -19,6 +21,9 @@ const StatsComponent: FC = () => {
     })
     axios.get("/api/letterboxd-recent").then((response) => {
       setFilms(response.data)
+    })
+    axios.get("/api/strava-recent").then((response) => {
+      setWorkouts(response.data)
     })
   }, [])
 
@@ -53,7 +58,11 @@ const StatsComponent: FC = () => {
 
       <Section>
         <h4>💪 Recent workouts</h4>
-        <div>coming soon</div>
+        <div className="grid gap-1 mt-2 grid-cols-2 md:grid-cols-4">
+          {workouts.map((workout: any, i: number) => {
+            return <WorkoutWidget key={i} {...workout} />
+          })}
+        </div>
       </Section>
 
       <div className="my-8 text-xs">
