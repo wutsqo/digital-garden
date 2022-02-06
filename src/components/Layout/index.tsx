@@ -27,7 +27,7 @@ const Layout: React.FC<DataProps> = ({
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
-        className="bg-pink-100 dark:bg-black text-black dark:text-white"
+        className="dark:bg-black text-black dark:text-white"
         style={bgImage ? { backgroundImage: bgImage } : {}}
       >
         <main className="container mx-auto w-full min-h-screen pt-16 p-4">

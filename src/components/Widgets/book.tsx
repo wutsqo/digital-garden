@@ -17,19 +17,19 @@ const BookWidget: FC<Book> = (props) => {
 
   if (!props.url)
     return (
-      <div className="flex h-24 animate-pulse bg-white dark:bg-gray-900">
-        <div className="h-24 w-20 bg-pink-300 dark:bg-gray-700"></div>
+      <div className="flex h-24 animate-pulse">
+        <div className="h-24 w-20 bg-dark-cream dark:bg-emerald-900"></div>
         <div className="px-4 p-1.5 z-0 relative w-full">
-          <div className="bg-pink-300 dark:bg-gray-700 h-6 w-48 mt-1"></div>
-          <div className="bg-pink-300 dark:bg-gray-700 h-4 w-32 mt-2"></div>
-          <div className="bg-pink-300 dark:bg-gray-700 h-4 w-20 absolute bottom-2"></div>
+          <div className="bg-dark-cream dark:bg-emerald-900 h-6 w-48 mt-1"></div>
+          <div className="bg-dark-cream dark:bg-emerald-900 h-4 w-32 mt-2"></div>
+          <div className="bg-dark-cream dark:bg-emerald-900 h-4 w-20 absolute bottom-2"></div>
         </div>
       </div>
     )
 
   return (
     <a
-      className="flex hover:bg-white dark:hover:bg-pink-900 hover:shadow h-24"
+      className="flex hover:bg-dark-cream dark:hover:bg-emerald-900 hover:shadow h-24"
       href={url}
       target="_blank"
       rel="noopener noreferrer"

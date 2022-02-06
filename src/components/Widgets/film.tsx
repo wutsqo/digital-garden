@@ -26,7 +26,7 @@ const FilmWidget: FC<Film> = (props) => {
   if (!title)
     return (
       <div
-        className="w-full h-auto animate-pulse bg-white dark:bg-gray-900"
+        className="w-full h-auto animate-pulse bg-dark-cream dark:bg-emerald-900"
         ref={ref}
         style={{ height: calculateHeight() + 12 }}
       />

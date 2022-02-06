@@ -32,7 +32,7 @@ h6 {
 }
 
 .ph-child {
-  @apply bg-white dark:bg-gray-700 animate-pulse;
+  @apply bg-dark-cream dark:bg-emerald-900 animate-pulse;
 }
 
 .fadeInUp {

@@ -1,5 +1,5 @@
 import axios from "axios"
-import React, { FC, useEffect, useState } from "react"
+import React, { FC, useEffect, useRef, useState } from "react"
 import tw from "twin.macro"
 import TrackWidget from "../Spotify/Widget/track"
 import BookWidget from "../Widgets/book"
@@ -30,10 +30,10 @@ const StatsComponent: FC = () => {
   return (
     <Container>
       <Section>
-        <h4>🎧 Recent top tracks</h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
-          {tracks.map((track, i) => {
-            return <TrackWidget {...track} key={i} pos={i + 1} />
+        <h4>🎬 Recent watches</h4>
+        <div className="grid gap-1 mt-2 grid-cols-3 sm:grid-cols-6">
+          {films.map((film, i) => {
+            return <FilmWidget key={i} {...film} />
           })}
         </div>
       </Section>
@@ -48,10 +48,10 @@ const StatsComponent: FC = () => {
       </Section>
 
       <Section>
-        <h4>🎬 Recent watches</h4>
-        <div className="grid gap-1 mt-2 grid-cols-3 sm:grid-cols-6">
-          {films.map((film, i) => {
-            return <FilmWidget key={i} {...film} />
+        <h4>🎧 Recent top tracks</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
+          {tracks.map((track, i) => {
+            return <TrackWidget {...track} key={i} pos={i + 1} />
           })}
         </div>
       </Section>

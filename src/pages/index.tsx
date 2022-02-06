@@ -4,7 +4,7 @@ import Seo from "../components/seo"
 import HomeComponent from "../components/Home"
 
 const IndexPage = () => (
-  <Layout noFooter={true} bgImage={bgImage}>
+  <Layout noFooter={true}>
     <Seo title="Home" />
     <HomeComponent />
   </Layout>

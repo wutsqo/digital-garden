@@ -28,7 +28,7 @@ const SpotifyWidgetSmall: FC = () => {
         className="-ml-1 text-2xl flex-shrink-0"
         style={{ color: "#1DB954" }}
       />
-      <div className="max-h-12 px-2 ml-2 border-l-2 border-black dark:border-pink-900 items-center h-10 flex">
+      <div className="max-h-12 px-2 ml-2 border-l-2 border-black dark:border-emerald-900 items-center h-10 flex">
         <div>
           {data.id ? (
             <div

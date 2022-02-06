@@ -67,7 +67,7 @@ const Navbar = () => {
 const Nav: FC = ({ children }) => {
   return (
     <nav
-      className="fixed w-screen z-50 bg-white text-gray-900 dark:text-white dark:bg-black bg-opacity-75 dark:bg-opacity-75 backdrop-blur-lg shadow top-0"
+      className="fixed w-screen z-50 bg-dark-cream text-gray-900 dark:text-white dark:bg-black top-0 bg-opacity-75 backdrop-blur"
       style={{ zIndex: 50 }}
     >
       {children}
@@ -85,7 +85,7 @@ const NavLink: FC<NavLinkProps> = ({ to, children }) => {
   if (to.startsWith("http"))
     return (
       <a
-        className="py-2 my-2 rounded px-2 mx-1 text-lg no-underline bg-transparent hover:bg-pink-100 dark:hover:bg-pink-800"
+        className="py-2 my-2 rounded px-2 mx-1 text-lg no-underline hover:bg-pastel-pink dark:hover:bg-emerald-900"
         href={to}
         target="_blank"
         rel="noopener noreferrer"
@@ -98,8 +98,8 @@ const NavLink: FC<NavLinkProps> = ({ to, children }) => {
   return (
     <Link
       to={to}
-      className="py-2 my-2 rounded px-2 mx-1 text-lg no-underline bg-transparent hover:bg-pink-100 dark:hover:bg-pink-800"
-      activeClassName="bg-pink-200 dark:bg-pink-900 dark:text-white text-black"
+      className="py-2 my-2 rounded px-2 mx-1 text-lg no-underline hover:bg-pastel-pink dark:hover:bg-emerald-900"
+      activeClassName="font-bold dark:text-white text-black"
     >
       {children}
     </Link>
