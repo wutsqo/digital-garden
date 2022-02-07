@@ -17,9 +17,8 @@ export default function handler(
       )
       const items = converted.rss.channel.item
       let movies = []
-      let count = 0
       for (let item of items) {
-        if (count == 6) break
+        if (movies.length === 6) break
         const cd = item.description._cdata
         const movie = {
           title: item["letterboxd:filmTitle"]?._text,
@@ -28,7 +27,6 @@ export default function handler(
           link: item.link?._text,
           thumb: cd.substring(cd.indexOf('src="') + 5, cd.indexOf('"/>')),
         }
-        count++
         movies.push(movie)
       }
       res.send(JSON.stringify(movies))
