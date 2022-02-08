@@ -27,9 +27,10 @@ const handler = async (
   })
 
   let activities = []
+  let typesToDisplay = ["Run", "Swim"]
   for (let activity of activitiesResponse.data) {
     if (activities.length === 4) break
-    if (activity.type === "Walk") continue
+    if (!typesToDisplay.includes(activity.type)) continue
     const data = {
       id: activity.id,
       name: activity.name,
