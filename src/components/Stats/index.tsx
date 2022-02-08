@@ -30,7 +30,13 @@ const StatsComponent: FC = () => {
   return (
     <Container>
       <Section>
-        <h4>🎬 Recent watches</h4>
+        <SectionTitle>
+          <h4>🎬 Recent watches</h4>
+          <a href="https://letterboxd.com/wutsqo/films/diary/" className="link">
+            see more
+          </a>
+        </SectionTitle>
+
         <div className="grid gap-1 mt-2 grid-cols-3 sm:grid-cols-6">
           {films.map((film, i) => {
             return <FilmWidget key={i} {...film} />
@@ -39,7 +45,13 @@ const StatsComponent: FC = () => {
       </Section>
 
       <Section>
-        <h4>📚 Recent reads</h4>
+        <SectionTitle>
+          <h4>📚 Recent reads</h4>
+          <a href="https://goodreads.com/wutsqo" className="link">
+            see more
+          </a>
+        </SectionTitle>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
           {books.map((book, i) => {
             return <BookWidget key={i} {...book} />
@@ -48,7 +60,16 @@ const StatsComponent: FC = () => {
       </Section>
 
       <Section>
-        <h4>🎧 Recent top tracks</h4>
+        <SectionTitle>
+          <h4>🎧 Recent top tracks</h4>
+          <a
+            href="https://open.spotify.com/user/urwatilwutsqo"
+            className="link"
+          >
+            see more
+          </a>
+        </SectionTitle>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
           {tracks.map((track, i) => {
             return <TrackWidget {...track} key={i} pos={i + 1} />
@@ -57,7 +78,13 @@ const StatsComponent: FC = () => {
       </Section>
 
       <Section>
-        <h4>🎽 Recent workouts</h4>
+        <SectionTitle>
+          <h4>🎽 Recent workouts</h4>
+          <a href="https://www.strava.com/athletes/61933714" className="link">
+            see more
+          </a>
+        </SectionTitle>
+
         <div className="grid gap-1 mt-2 grid-cols-2 md:grid-cols-4">
           {workouts.map((workout: any, i: number) => {
             return <WorkoutWidget key={i} {...workout} />
@@ -75,6 +102,7 @@ const StatsComponent: FC = () => {
 }
 
 const Container = tw.div`max-w-screen-md mx-auto pt-8`
-const Section = tw.div`mb-10`
+const Section = tw.div`mb-12 mt-6`
+const SectionTitle = tw.div`flex justify-between`
 
 export default StatsComponent

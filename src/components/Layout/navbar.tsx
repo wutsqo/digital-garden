@@ -77,18 +77,16 @@ const Nav: FC = ({ children }) => {
 
 const Container = tw.div`max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16`
 const InnerContainer = tw.div`flex items-center justify-end`
-const NavLinkContainer = tw.div`hidden md:flex mr-4 ml-10`
+const NavLinkContainer = tw.div`hidden md:flex mr-4 ml-10 text-gray-500 dark:text-gray-400 font-semibold text-lg`
 const BurgerContainer = tw.div`mr-2 flex items-center md:hidden`
-const MobileMenuContainer = tw.div`md:hidden px-4 pt-2 pb-3 flex flex-col text-center`
+const MobileMenuContainer = tw.div`md:hidden px-4 pt-2 pb-3 flex flex-col text-center font-semibold`
 
 const NavLink: FC<NavLinkProps> = ({ to, children }) => {
   if (to.startsWith("http"))
     return (
       <a
-        className="py-2 my-2 rounded px-2 mx-1 text-lg no-underline hover:bg-pastel-pink dark:hover:bg-emerald-900"
+        className="py-2 my-2 rounded px-2 mx-1 hover:text-black dark:hover:text-white"
         href={to}
-        target="_blank"
-        rel="noopener noreferrer"
       >
         {children}
         <span className="hidden group-hover:inline-block">&nbsp;🡥</span>
@@ -98,8 +96,8 @@ const NavLink: FC<NavLinkProps> = ({ to, children }) => {
   return (
     <Link
       to={to}
-      className="py-2 my-2 rounded px-2 mx-1 text-lg no-underline hover:bg-pastel-pink dark:hover:bg-emerald-900"
-      activeClassName="font-bold dark:text-white text-black"
+      className="py-2 my-2 rounded px-2 mx-1 hover:text-black dark:hover:text-white"
+      activeClassName="dark:text-white text-black"
     >
       {children}
     </Link>

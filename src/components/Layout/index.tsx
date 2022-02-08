@@ -2,6 +2,7 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import SocialsBar from "./socials"
 
 type DataProps = {
   noFooter?: boolean
@@ -26,6 +27,7 @@ const Layout: React.FC<DataProps> = ({
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <SocialsBar />
       <div
         className="dark:bg-black text-black dark:text-white"
         style={bgImage ? { backgroundImage: bgImage } : {}}
@@ -35,7 +37,7 @@ const Layout: React.FC<DataProps> = ({
         </main>
         {!noFooter && (
           <footer className="container mx-auto py-8 text-center text-sm">
-            &copy; {new Date().getFullYear()} Muhammad Urwatil Wutsqo
+            Designed & Built by Muhammad Urwatil Wutsqo
           </footer>
         )}
       </div>

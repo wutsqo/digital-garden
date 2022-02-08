@@ -8,53 +8,38 @@ import SpotifyWidgetSmall from "../Spotify/Widget/small"
 
 const HomeComponent: FC<{}> = () => {
   return (
-    <Container style={{ paddingTop: "20vh" }}>
-      <h1 className="text-3xl">Hello!</h1>
-      <h2 className="text-5xl">I am Wutsqo</h2>
-      <br />
-      <p>Welcome to my personal site</p>
-      <SocialContainer>
-        <SocialButton href="mailto:wutsqo@ristek.cs.ui.ac.id">
-          <FaEnvelope color="red" />
-        </SocialButton>
+    <Container style={{ paddingTop: "15vh" }}>
+      <h1
+        className="text-4xl md:text-5xl uppercase font-bold text-white dark:text-black fade-in"
+        style={{ WebkitTextStroke: "2px var(--stroke)" }}
+      >
+        Hello, I am
+      </h1>
+      <h2
+        className="text-5xl md:text-7xl uppercase font-bold fade-in"
+        style={{ animationDelay: "0.3s" }}
+      >
+        Muhammad Urwatil Wutsqo.
+      </h2>
 
-        <SocialButton href="https://linkedin.com/in/wutsqo">
-          <FaLinkedin color="#0e76a8" />
-        </SocialButton>
+      <h4
+        className="fade-in mt-8 font-normal"
+        style={{ animationDelay: "0.6s" }}
+      >
+        I am a <span className="font-bold">CS Student</span> with interests in
+        Fullstack <span className="font-bold">Web Development</span> .
+      </h4>
 
-        <SocialButton href="https://discordapp.com/users/487959385939771392">
-          <FaDiscord color="#7289d9" />
-        </SocialButton>
-
-        <SocialButton href="https://www.duolingo.com/profile/kafkanium">
-          <SiDuolingo color="#7ac70c" />
-        </SocialButton>
-      </SocialContainer>
-
-      <div style={{ marginTop: "12vh" }}>
+      <div
+        className="fade-in mt-8"
+        style={{ marginTop: "15vh", animationDelay: "1.2s" }}
+      >
         <SpotifyWidgetSmall />
       </div>
     </Container>
   )
 }
 
-interface ISocialButton {
-  href: string
-}
-
-const Container = tw.div`max-w-screen-md mx-auto`
-const SocialContainer = tw.div`relative flex gap-3 mt-8 h-12 items-center`
-const SocialButton: FC<ISocialButton> = ({ children, href }) => {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="h-10 w-10 bg-white rounded p-1 flex items-center justify-center text-3xl"
-    >
-      {children}
-    </a>
-  )
-}
+const Container = tw.div`max-w-screen-lg mx-auto`
 
 export default HomeComponent
