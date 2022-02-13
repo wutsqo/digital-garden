@@ -27,7 +27,7 @@ const HomeComponent: FC<{}> = () => {
         style={{ animationDelay: "0.6s" }}
       >
         I am a <span className="font-bold">CS Student</span> with interests in
-        Fullstack <span className="font-bold">Web Development</span> .
+        Fullstack <span className="font-bold">Web Development</span>.
       </h4>
 
       <div
