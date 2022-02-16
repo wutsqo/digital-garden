@@ -38,8 +38,14 @@ const FilmWidget: FC<Film> = (props) => {
       target="_blank"
       rel="noopener noreferrer"
       className="w-full h-auto"
+      style={{ height: calculateHeight() + 15 }}
     >
-      <img src={thumb} alt={title} className="w-full" />
+      <img
+        src={thumb}
+        alt={title}
+        className="w-full bg-emerald-900"
+        style={{ height: calculateHeight() }}
+      />
       <div className="flex justify-between">
         <div className="-mt-1.5">
           <StarRatings
