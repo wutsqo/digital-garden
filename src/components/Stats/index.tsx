@@ -79,13 +79,13 @@ const StatsComponent: FC = () => {
 
       <Section>
         <SectionTitle>
-          <h4>🎽 Recent workouts</h4>
+          <h4>💪 Recent workouts</h4>
           <a href="https://www.strava.com/athletes/61933714" className="link">
             see more
           </a>
         </SectionTitle>
 
-        <div className="grid gap-1 mt-2 grid-cols-2 md:grid-cols-4">
+        <div className="grid gap-1 mt-2 grid-cols-1 md:grid-cols-2">
           {workouts.map((workout: any, i: number) => {
             return <WorkoutWidget key={i} {...workout} />
           })}

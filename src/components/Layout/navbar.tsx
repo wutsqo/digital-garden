@@ -75,7 +75,7 @@ const Nav: FC = ({ children }) => {
   )
 }
 
-const Container = tw.div`max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16`
+const Container = tw.div`max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16`
 const InnerContainer = tw.div`flex items-center justify-end`
 const NavLinkContainer = tw.div`hidden md:flex mr-4 ml-10 text-gray-500 dark:text-gray-400 font-semibold text-lg`
 const BurgerContainer = tw.div`mr-2 flex items-center md:hidden`

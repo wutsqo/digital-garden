@@ -36,7 +36,7 @@ const handler = async (
       name: activity.name,
       type: activity.type,
       distance: activity.distance,
-      elapsed_time: activity.elapsed_time,
+      elapsed_time: activity.moving_time,
       map: activity.map.summary_polyline,
       date: activity.start_date,
     }
