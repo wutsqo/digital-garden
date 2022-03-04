@@ -12,17 +12,20 @@ interface Workout {
   map: string
   id: number
   date: string
+  avg_hr: number
+  max_hr: number
 }
 
 const WorkoutWidget: FC<Workout> = (props) => {
-  const { name, type, date, id, distance, elapsed_time, map } = props
+  const { name, type, date, id, distance, elapsed_time, map, avg_hr, max_hr } =
+    props
 
   const countPace = (timeInSeconds: number, distanceInMeters: number) => {
     let pace = (timeInSeconds / distanceInMeters / 60) * 1000
     let leftover = pace % 1
     let minutes = pace - leftover
     let seconds = Math.round(leftover * 60)
-    return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`
+    return `${minutes}'${seconds < 10 ? `0${seconds}` : seconds}"`
   }
 
   if (!name)
@@ -40,6 +43,7 @@ const WorkoutWidget: FC<Workout> = (props) => {
       <div className="flex-shrink-0 pt-1 text-3xl">
         {type === "Run" && "👟"}
         {type === "Swim" && "🏊‍♂️"}
+        {name.toLowerCase().includes("badminton") && "🏸"}
       </div>
       <div>
         <div className="font-medium">
@@ -52,23 +56,40 @@ const WorkoutWidget: FC<Workout> = (props) => {
         <div className="flex gap-4 pt-2">
           {distance > 0 && (
             <div>
-              <div className="text-xs">Distance</div>
+              <div className="text-xs">📏 Distance</div>
               <div>{(distance / 1000).toFixed(2)} km</div>
             </div>
           )}
           {distance > 0 && (
             <div>
-              <div className="text-xs">Pace</div>
+              <div className="text-xs">⏱ Pace</div>
               <div>{countPace(elapsed_time, distance)} /km</div>
             </div>
           )}
           <div>
-            <div className="text-xs">Time</div>
+            <div className="text-xs">⌛ Time</div>
             <div>
+              {elapsed_time >= 3600 &&
+                `${new Date(elapsed_time * 1000)
+                  .toISOString()
+                  .substr(11, 2)}h `}
               {new Date(elapsed_time * 1000).toISOString().substr(14, 2)}m{" "}
-              {new Date(elapsed_time * 1000).toISOString().substr(17, 2)}s
+              {elapsed_time < 3600 &&
+                `${new Date(elapsed_time * 1000).toISOString().substr(17, 2)}s`}
             </div>
           </div>
+          {name.toLowerCase().includes("badminton") && (
+            <div>
+              <div className="text-xs">💓 Avg HR</div>
+              <div>{avg_hr.toFixed(0)} bpm</div>
+            </div>
+          )}
+          {name.toLowerCase().includes("badminton") && (
+            <div>
+              <div className="text-xs">💓 Max HR</div>
+              <div>{max_hr.toFixed(0)} bpm</div>
+            </div>
+          )}
         </div>
       </div>
     </a>

@@ -27,8 +27,9 @@ const handler = async (
   })
 
   let activities = []
-  let typesToDisplay = ["Run", "Swim"]
+  let typesToDisplay = ["Run", "Swim", "Workout"]
   for (let activity of activitiesResponse.data) {
+    console.log(activity)
     if (activities.length === 4) break
     if (!typesToDisplay.includes(activity.type)) continue
     const data = {
@@ -39,6 +40,8 @@ const handler = async (
       elapsed_time: activity.moving_time,
       map: activity.map.summary_polyline,
       date: activity.start_date,
+      avg_hr: activity.average_heartrate,
+      max_hr: activity.max_heartrate,
     }
     activities.push(data)
   }
