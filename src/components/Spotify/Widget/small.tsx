@@ -34,6 +34,7 @@ const SpotifyWidgetSmall: FC = () => {
           src={data?.album?.images[2].url}
           alt={data.name}
           className="h-10 w-10"
+          key={data.id}
         />
         <div className="max-h-12 px-2 items-center h-8 flex">
           <div>
