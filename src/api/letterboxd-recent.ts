@@ -18,7 +18,6 @@ export default function handler(
       const items = converted.rss.channel.item
       let movies = []
       for (let item of items) {
-        if (movies.length === 6) break
         const cd = item.description._cdata
         const movie = {
           title: item["letterboxd:filmTitle"]?._text,
@@ -29,7 +28,8 @@ export default function handler(
         }
         movies.push(movie)
       }
-      res.send(JSON.stringify(movies))
+      movies.sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1))
+      res.send(JSON.stringify(movies.slice(0, 6)))
     })
     .catch((error) => {
       console.log(error)
