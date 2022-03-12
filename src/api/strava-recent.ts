@@ -19,7 +19,7 @@ const handler = async (
     })
 
   const activitiesEndpoint =
-    "https://www.strava.com/api/v3/athlete/activities?per_page=12"
+    "https://www.strava.com/api/v3/athlete/activities?per_page=18"
   const activitiesResponse = await axios.get(activitiesEndpoint, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -29,8 +29,7 @@ const handler = async (
   let activities = []
   let typesToDisplay = ["Run", "Swim", "Workout"]
   for (let activity of activitiesResponse.data) {
-    console.log(activity)
-    if (activities.length === 4) break
+    if (activities.length === 6) break
     if (!typesToDisplay.includes(activity.type)) continue
     const data = {
       id: activity.id,

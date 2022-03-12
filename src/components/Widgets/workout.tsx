@@ -44,6 +44,7 @@ const WorkoutWidget: FC<Workout> = (props) => {
         {type === "Run" && "👟"}
         {type === "Swim" && "🏊‍♂️"}
         {name.toLowerCase().includes("badminton") && "🏸"}
+        {name.toLowerCase().includes("futsal") && "⚽"}
       </div>
       <div>
         <div className="font-medium">
@@ -78,17 +79,17 @@ const WorkoutWidget: FC<Workout> = (props) => {
                 `${new Date(elapsed_time * 1000).toISOString().substr(17, 2)}s`}
             </div>
           </div>
-          {name.toLowerCase().includes("badminton") && (
-            <div>
-              <div className="text-xs">💓 Avg HR</div>
-              <div>{avg_hr.toFixed(0)} bpm</div>
-            </div>
-          )}
-          {name.toLowerCase().includes("badminton") && (
-            <div>
-              <div className="text-xs">💓 Max HR</div>
-              <div>{max_hr.toFixed(0)} bpm</div>
-            </div>
+          {type !== "Run" && type !== "Swim" && (
+            <>
+              <div>
+                <div className="text-xs">💓 Avg HR</div>
+                <div>{avg_hr.toFixed(0)} bpm</div>
+              </div>
+              <div>
+                <div className="text-xs">💓 Max HR</div>
+                <div>{max_hr.toFixed(0)} bpm</div>
+              </div>
+            </>
           )}
         </div>
       </div>

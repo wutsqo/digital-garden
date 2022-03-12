@@ -10,7 +10,7 @@ const StatsComponent: FC = () => {
   const [tracks, setTracks] = useState<any[]>(new Array(8).fill({}))
   const [books, setBooks] = useState<any[]>(new Array(6).fill({}))
   const [films, setFilms] = useState<any[]>(new Array(6).fill({}))
-  const [workouts, setWorkouts] = useState<any>(new Array(4).fill({}))
+  const [workouts, setWorkouts] = useState<any>(new Array(6).fill({}))
 
   useEffect(() => {
     axios.get("/api/spotify-top").then((response) => {
