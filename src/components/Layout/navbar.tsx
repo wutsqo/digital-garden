@@ -67,7 +67,7 @@ const Navbar = () => {
 const Nav: FC = ({ children }) => {
   return (
     <nav
-      className="fixed w-screen z-50 bg-dark-cream text-gray-900 dark:text-white dark:bg-black top-0 bg-opacity-75 backdrop-blur"
+      className="fixed w-screen z-50 text-gray-900 dark:text-white dark:bg-black dark:bg-opacity-75 top-0 bg-opacity-75 backdrop-blur"
       style={{ zIndex: 50 }}
     >
       {children}
@@ -75,7 +75,7 @@ const Nav: FC = ({ children }) => {
   )
 }
 
-const Container = tw.div`max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16`
+const Container = tw.div`max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20`
 const InnerContainer = tw.div`flex items-center justify-end`
 const NavLinkContainer = tw.div`hidden md:flex mr-4 ml-10 text-gray-500 dark:text-gray-400 font-semibold text-lg`
 const BurgerContainer = tw.div`mr-2 flex items-center md:hidden`
