@@ -5,19 +5,16 @@ import { SpotifyWidgetSmall } from "../../widgets"
 export const HomeComponent: FC<{}> = () => {
   return (
     <Container style={{ paddingTop: "20vh" }}>
-      <h1
-        className="text-5xl md:text-7xl font-bold fade-in"
-        style={{ animationDelay: "0.3s" }}
-      >
-        Muhammad <br /> Urwatil Wutsqo.
-      </h1>
-
-      <h4
-        className="fade-in mt-8 font-normal"
-        style={{ animationDelay: "0.6s" }}
-      >
-        I am a Computer Science student with interests in Software Engineering.
-      </h4>
+      <div>
+        <div className="text-2xl md:text-3xl font-bold">
+          Hello! I am <span className="text-pink-600">Wutsqo</span>.
+        </div>
+        <div className="mt-4 text-3xl md:text-4xl font-bold max-w-3xl">
+          A <span className="text-blue-600">Computer</span>{" "}
+          <span className="text-red-600">Science</span> student with interests
+          in <span className="text-yellow-600">Software Engineering</span> fields.
+        </div>
+      </div>
 
       <div
         className="fade-in mt-8"
