@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./components/header"
 import SocialsBar from "./components/socials"
+import { Gradient1, Gradient2 } from "./components/gradients"
 
 type DataProps = {
   noFooter?: boolean
@@ -29,10 +30,12 @@ export const Layout: React.FC<DataProps> = ({
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <SocialsBar />
       <div
-        className="dark:bg-black text-black dark:text-white"
+        className="dark:bg-black text-black dark:text-white overflow-hidden relative"
         style={bgImage ? { backgroundImage: bgImage } : {}}
       >
-        <main className="container mx-auto w-full min-h-screen pt-16 p-4">
+        <Gradient1 />
+        <Gradient2 />
+        <main className="container mx-auto w-full min-h-screen pt-16 p-4 z-10 relative">
           {children}
         </main>
         {!noFooter && (
