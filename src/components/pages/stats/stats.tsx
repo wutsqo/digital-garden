@@ -1,12 +1,14 @@
 import axios from "axios"
-import React, { FC, useEffect, useRef, useState } from "react"
+import React, { FC, useEffect, useState } from "react"
 import tw from "twin.macro"
-import TrackWidget from "../Spotify/Widget/track"
-import BookWidget from "../Widgets/book"
-import FilmWidget from "../Widgets/film"
-import WorkoutWidget from "../Widgets/workout"
+import {
+  TrackWidget,
+  BookWidget,
+  FilmWidget,
+  WorkoutWidget,
+} from "../../widgets"
 
-const StatsComponent: FC = () => {
+export const StatsComponent: FC = () => {
   const [tracks, setTracks] = useState<any[]>(new Array(8).fill({}))
   const [books, setBooks] = useState<any[]>(new Array(6).fill({}))
   const [films, setFilms] = useState<any[]>(new Array(6).fill({}))
@@ -104,5 +106,3 @@ const StatsComponent: FC = () => {
 const Container = tw.div`max-w-screen-md mx-auto pt-8`
 const Section = tw.div`mb-12 mt-6`
 const SectionTitle = tw.div`flex justify-between`
-
-export default StatsComponent

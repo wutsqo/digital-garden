@@ -1,10 +1,10 @@
 import React from "react"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import useSound from "use-sound"
-import onSfx from "../../sounds/switch-on.mp3"
-import offSfx from "../../sounds/switch-off.mp3"
-import sun from "../../images/sun.svg"
-import moon from "../../images/moon.svg"
+import onSfx from "../../../assets/sounds/switch-on.mp3"
+import offSfx from "../../../assets/sounds/switch-off.mp3"
+import sun from "../../../assets/images/sun.svg"
+import moon from "../../../assets/images/moon.svg"
 
 const ThemeToggle = () => {
   const [on] = useSound(onSfx)

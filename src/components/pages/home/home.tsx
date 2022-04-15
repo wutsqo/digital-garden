@@ -1,12 +1,8 @@
 import React, { FC } from "react"
-import { FaDiscord } from "@react-icons/all-files/fa/FaDiscord"
-import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
-import { SiDuolingo } from "@react-icons/all-files/si/SiDuolingo"
-import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope"
 import tw from "twin.macro"
-import SpotifyWidgetSmall from "../Spotify/Widget/small"
+import { SpotifyWidgetSmall } from "../../widgets"
 
-const HomeComponent: FC<{}> = () => {
+export const HomeComponent: FC<{}> = () => {
   return (
     <Container style={{ paddingTop: "20vh" }}>
       <h1
@@ -34,5 +30,3 @@ const HomeComponent: FC<{}> = () => {
 }
 
 const Container = tw.div`max-w-screen-lg lg:px-12 mx-auto`
-
-export default HomeComponent

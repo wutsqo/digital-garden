@@ -12,7 +12,7 @@ interface TrackProps {
   pos?: number
 }
 
-const TrackWidget: FC<TrackProps> = (props) => {
+export const TrackWidget: FC<TrackProps> = (props) => {
   const { name, album, artists, external_urls, pos } = props
 
   if (!name)
@@ -52,5 +52,3 @@ const TrackWidget: FC<TrackProps> = (props) => {
     </a>
   )
 }
-
-export default TrackWidget

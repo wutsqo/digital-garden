@@ -1,7 +1,7 @@
 import React from "react"
-import JournalComponent from "../components/Journal"
-import Layout from "../components/Layout"
-import Seo from "../components/seo"
+import { JournalComponent } from "../components/pages"
+import { Layout } from "../components/layout"
+import { Seo } from "../components/seo"
 
 const JournalPage = () => {
   return (
