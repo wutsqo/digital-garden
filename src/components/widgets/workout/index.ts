@@ -1,0 +1,1 @@
+export { WorkoutWidget } from "./workout"

@@ -1,6 +1,6 @@
 import React from "react"
 
-const JournalComponent = () => {
+export const JournalComponent = () => {
   return (
     <div className="max-w-screen-md mx-auto pt-8">
       <h2>Journal</h2>
@@ -8,5 +8,3 @@ const JournalComponent = () => {
     </div>
   )
 }
-
-export default JournalComponent

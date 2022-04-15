@@ -1,7 +1,7 @@
 import * as React from "react"
-import Layout from "../components/Layout"
-import Seo from "../components/seo"
-import HomeComponent from "../components/Home"
+import { Layout } from "../components/layout"
+import { Seo } from "../components/seo"
+import { HomeComponent } from "../components/pages"
 
 const IndexPage = () => (
   <Layout noFooter={true}>

@@ -1,8 +1,5 @@
 import moment from "moment"
 import React, { FC } from "react"
-import { BiWalk } from "@react-icons/all-files/bi/BiWalk"
-import { BiRun } from "@react-icons/all-files/bi/BiRun"
-import { BiSwim } from "@react-icons/all-files/bi/BiSwim"
 
 interface Workout {
   name: string
@@ -16,7 +13,7 @@ interface Workout {
   max_hr: number
 }
 
-const WorkoutWidget: FC<Workout> = (props) => {
+export const WorkoutWidget: FC<Workout> = (props) => {
   const { name, type, date, id, distance, elapsed_time, map, avg_hr, max_hr } =
     props
 
@@ -96,5 +93,3 @@ const WorkoutWidget: FC<Workout> = (props) => {
     </a>
   )
 }
-
-export default WorkoutWidget

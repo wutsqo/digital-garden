@@ -10,7 +10,7 @@ interface Film {
   thumb: string
 }
 
-const FilmWidget: FC<Film> = (props) => {
+export const FilmWidget: FC<Film> = (props) => {
   const { title, thumb, rating, date, link } = props
   const ref = useRef<HTMLHeadingElement>(null)
   const [width, setWidth] = useState<number>(0)
@@ -61,5 +61,3 @@ const FilmWidget: FC<Film> = (props) => {
     </a>
   )
 }
-
-export default FilmWidget

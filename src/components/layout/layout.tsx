@@ -1,15 +1,15 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import SocialsBar from "./socials"
+import Header from "./components/header"
+import SocialsBar from "./components/socials"
 
 type DataProps = {
   noFooter?: boolean
   bgImage?: string
 }
 
-const Layout: React.FC<DataProps> = ({
+export const Layout: React.FC<DataProps> = ({
   children,
   noFooter = false,
   bgImage,
@@ -44,5 +44,3 @@ const Layout: React.FC<DataProps> = ({
     </>
   )
 }
-
-export default Layout

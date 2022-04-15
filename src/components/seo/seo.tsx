@@ -17,7 +17,7 @@ interface SeoProps {
   title: string
 }
 
-const Seo: React.FC<SeoProps> = ({ description, lang, meta, title }) => {
+export const Seo: React.FC<SeoProps> = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -92,5 +92,3 @@ Seo.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }
-
-export default Seo

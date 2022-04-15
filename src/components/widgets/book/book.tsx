@@ -12,7 +12,7 @@ interface Book {
   url: string
 }
 
-const BookWidget: FC<Book> = (props) => {
+export const BookWidget: FC<Book> = (props) => {
   const { book, rating, read_at, url } = props
 
   if (!props.url)
@@ -61,5 +61,3 @@ const BookWidget: FC<Book> = (props) => {
     </a>
   )
 }
-
-export default BookWidget

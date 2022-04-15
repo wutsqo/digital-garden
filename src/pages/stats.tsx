@@ -1,7 +1,7 @@
 import React from "react"
-import Layout from "../components/Layout"
-import Seo from "../components/seo"
-import StatsComponent from "../components/Stats"
+import { Layout } from "../components/layout"
+import { Seo } from "../components/seo"
+import { StatsComponent } from "../components/pages"
 
 const SpotifyPage = () => {
   return (

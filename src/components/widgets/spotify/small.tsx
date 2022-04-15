@@ -1,8 +1,7 @@
 import axios from "axios"
 import React, { FC, useEffect, useState } from "react"
-import { FaSpotify } from "@react-icons/all-files/fa/FaSpotify"
 
-const SpotifyWidgetSmall: FC = () => {
+export const SpotifyWidgetSmall: FC = () => {
   const [data, setData] = useState<any>({})
   const [type, setType] = useState<any>({})
 
@@ -75,5 +74,3 @@ const SpotifyWidgetSmall: FC = () => {
     </>
   )
 }
-
-export default SpotifyWidgetSmall
