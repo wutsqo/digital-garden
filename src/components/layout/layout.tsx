@@ -2,7 +2,6 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./components/header"
-import SocialsBar from "./components/socials"
 import { Gradient1, Gradient2 } from "./components/gradients"
 
 type DataProps = {
@@ -28,7 +27,6 @@ export const Layout: React.FC<DataProps> = ({
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <SocialsBar />
       <div
         className="dark:bg-black text-black dark:text-white overflow-hidden relative"
         style={bgImage ? { backgroundImage: bgImage } : {}}
