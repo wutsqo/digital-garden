@@ -67,7 +67,7 @@ const Navbar = () => {
 const Nav: FC = ({ children }) => {
   return (
     <nav
-      className="fixed w-screen z-50 text-gray-900 dark:text-white top-0 backdrop-blur"
+      className="fixed w-screen z-50 text-gray-900 dark:text-white top-0 backdrop-blur bg-white bg-opacity-50 dark:bg-transparent"
       style={{ zIndex: 50 }}
     >
       {children}
@@ -97,7 +97,7 @@ const NavLink: FC<NavLinkProps> = ({ to, children }) => {
     <Link
       to={to}
       className="py-2 my-2 rounded px-2 mx-1 hover:text-black dark:hover:text-white"
-      activeClassName="dark:text-white text-black"
+      activeClassName="dark:text-white text-black bg-white dark:bg-black md:bg-none"
     >
       {children}
     </Link>
