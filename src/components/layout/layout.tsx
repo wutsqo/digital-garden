@@ -38,7 +38,7 @@ export const Layout: React.FC<DataProps> = ({
         </main>
         <hr />
         {!noFooter && (
-          <footer className="container mx-auto py-24 text-center text-sm z-10">
+          <footer className="container mx-auto py-24 text-center text-sm z-50 relative">
             &copy; 2022 Made with 💜 by Wutsqo
           </footer>
         )}
