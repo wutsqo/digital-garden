@@ -26,7 +26,7 @@ export const SpotifyWidgetSmall: FC = () => {
   return (
     <>
       <div className="text-xs mb-1">
-        {type === "current" ? "currently" : "recently"} listening to:
+        {type === "current" ? "Currently" : "Recently"} listening on Spotify:
       </div>
       <div className="relative p-1 pl-0 flex items-center max-w-xs text-sm">
         <img
