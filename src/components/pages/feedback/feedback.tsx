@@ -30,14 +30,14 @@ export const FeedbackComponent = () => {
   }
 
   return (
-    <div className="mt-8 max-w-screen-md mx-auto px-4">
+    <div className="mt-8 max-w-screen-md mx-auto">
       <h1>Send me a message</h1>
       <div className="mt-8 flex flex-col gap-8 text-black dark:text-white">
         <div>
           <label className="dark:text-white text-black">Name</label> <br />
           <input
             type="text"
-            className="w-full h-10 mt-2 rounded bg-slate-200 dark:bg-slate-800 p-2"
+            className="w-full h-10 mt-2 rounded bg-slate-200 dark:bg-slate-800 px-3 py-2 bg-opacity-75 dark:bg-opacity-75"
             value={input.nama}
             name="nama"
             onChange={inputHandler}
@@ -51,7 +51,7 @@ export const FeedbackComponent = () => {
           <label className="dark:text-white text-black">Message</label> <br />
           <textarea
             rows={5}
-            className="w-full mt-2 rounded bg-slate-200 dark:bg-slate-800 p-2"
+            className="w-full mt-2 rounded bg-slate-200 dark:bg-slate-800 px-3 py-2 bg-opacity-75 dark:bg-opacity-75"
             value={input.pesan}
             name="pesan"
             onChange={inputHandler}
