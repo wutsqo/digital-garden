@@ -55,7 +55,7 @@ export const FeedbackComponent = () => {
             value={input.pesan}
             name="pesan"
             onChange={inputHandler}
-            placeholder="What message do you want to tell me?"
+            placeholder="What do you want to tell me?"
           />
           {!input.pesan && (
             <div className="text-red-500 text-xs">This field is required</div>
