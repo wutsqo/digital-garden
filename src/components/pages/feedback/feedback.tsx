@@ -83,7 +83,7 @@ export const FeedbackComponent = () => {
               Are you reading my message?
             </div>
             <div className="font-light">
-              Yes! The message will be sent straight into my private Discord
+              Yes! The message will be sent right away into my private Discord
               server via{" "}
               <a
                 href="https://discord.com/developers/docs/resources/webhook"
