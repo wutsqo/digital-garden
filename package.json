@@ -8,6 +8,7 @@
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@headlessui/react": "^1.4.3",
+    "@notionhq/client": "^1.0.4",
     "@react-icons/all-files": "^4.1.0",
     "axios": "^0.25.0",
     "gatsby": "^4.5.4",

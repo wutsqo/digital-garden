@@ -1,16 +1,51 @@
 import axios from "axios"
 import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
+import { Client } from "@notionhq/client"
 
-const handler = async (
-  req: GatsbyFunctionRequest,
-  res: GatsbyFunctionResponse
-) => {
-  if (req.method !== "POST") {
-    res.status(400).send("Method not allowed")
-  }
+const sendToNotion = async (req: GatsbyFunctionRequest) => {
+  const databaseId = process.env.NOTION_FEEDBACK_ID || ""
+  const notionKey = process.env.NOTION_KEY || ""
 
+  if (!databaseId) throw new Error("Notion database ID not set")
+  if (!notionKey) throw new Error("Notion key not set")
+
+  const notion = new Client({
+    auth: process.env.NOTION_KEY,
+  })
+
+  await notion.pages.create({
+    parent: { database_id: databaseId },
+    properties: {
+      title: {
+        title: [
+          {
+            text: {
+              content: req.body.nama || "",
+            },
+          },
+        ],
+      },
+      Message: {
+        rich_text: [
+          {
+            text: {
+              content: req.body.pesan,
+            },
+          },
+        ],
+      },
+      Timestamp: {
+        date: {
+          start: new Date().toISOString(),
+        },
+      },
+    },
+  })
+}
+
+const sendToDiscord = async (req: GatsbyFunctionRequest) => {
   const ENDPOINT = process.env.DISCORD_WEBHOOK_URL || ""
-  if (!ENDPOINT) res.status(500).send("Discord webhook URL not set")
+  if (!ENDPOINT) throw new Error("Discord webhook url not set")
 
   const payload = {
     attachments: [],
@@ -32,15 +67,24 @@ const handler = async (
     ],
   }
 
-  axios
-    .post(ENDPOINT, payload)
-    .then(() => {
-      res.status(200).send("OK")
-    })
-    .catch((err) => {
-      console.log(err)
-      res.status(500).send("Failed to send messages")
-    })
+  await axios.post(ENDPOINT, payload)
+}
+
+const handler = async (
+  req: GatsbyFunctionRequest,
+  res: GatsbyFunctionResponse
+) => {
+  if (req.method !== "POST") {
+    res.status(400).send("Method not allowed")
+  }
+
+  try {
+    await sendToNotion(req)
+    await sendToDiscord(req)
+    res.status(200).send("Message has been sent")
+  } catch (error) {
+    res.status(500).send("An error occured")
+  }
 }
 
 export default handler

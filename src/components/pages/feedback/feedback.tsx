@@ -75,25 +75,17 @@ export const FeedbackComponent = () => {
           </button>
         </div>
       </div>
-      <div className="mt-16">
+      <div className="mt-16 text-slate-800 dark:text-slate-200">
         <h3>FAQ</h3>
-        <div className="mt-4 text-slate-800 dark:text-slate-200">
+        <div className="mt-4 ">
           <div>
-            <div className="font-medium text-lg">
-              Are you reading my message?
+            <div className="font-medium text-base">
+              Are you reading my messages?
             </div>
-            <div className="font-light">
-              Yes! The message will be sent right away into my private Discord
-              server via{" "}
-              <a
-                href="https://discord.com/developers/docs/resources/webhook"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link"
-              >
-                webhook
-              </a>
-              . So I will read them within hours, even minutes.
+            <div className="font-light text-sm mt-2">
+              Yes! The messages will be saved right away on my Notion database.
+              I also get a Discord notification each time a message has been
+              received. So, there will be no missing out.
             </div>
           </div>
         </div>
