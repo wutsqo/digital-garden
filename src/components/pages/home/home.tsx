@@ -1,14 +1,86 @@
 import { Link } from "gatsby"
-import React, { FC } from "react"
+import React, { FC, useCallback, useRef, useState } from "react"
+import ReactCanvasConfetti from "react-canvas-confetti"
 import tw from "twin.macro"
 import { SpotifyWidgetSmall } from "../../widgets"
+import { StaticImage } from "gatsby-plugin-image"
 
 export const HomeComponent: FC<{}> = () => {
+  const refAnimationInstance = useRef(null)
+
+  const getInstance = useCallback((instance) => {
+    refAnimationInstance.current = instance
+  }, [])
+
+  const makeShot = useCallback((particleRatio, opts) => {
+    refAnimationInstance.current &&
+      refAnimationInstance.current({
+        ...opts,
+        origin: { y: 0.7 },
+        particleCount: Math.floor(200 * particleRatio),
+      })
+  }, [])
+
+  const fire = useCallback(() => {
+    makeShot(0.25, {
+      spread: 26,
+      startVelocity: 55,
+    })
+
+    makeShot(0.2, {
+      spread: 60,
+    })
+
+    makeShot(0.35, {
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8,
+    })
+
+    makeShot(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2,
+    })
+
+    makeShot(0.1, {
+      spread: 120,
+      startVelocity: 45,
+    })
+  }, [makeShot])
+
+  const greetings = ["Salam!", "안녕!", "こんにちは！"]
+  const [active, setActive] = useState(0)
+
+  const hoverHandler = () => {
+    fire()
+    setActive((active + 1) % 3)
+  }
+
   return (
     <Container style={{ paddingTop: "20vh" }}>
       <div>
-        <div className="text-3xl md:text-4xl font-bold">
-          Hello! I am <span className="text-pink-600">Wutsqo</span>.
+        <div className="text-3xl md:text-4xl font-bold flex flex-col items-start gap-8">
+          <div
+            className="bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-0.5 rounded-full relative group"
+            onClick={hoverHandler}
+          >
+            <div className="absolute left-16 h-12 w-96 items-center text-base hidden group-hover:flex">
+              {greetings[active]}
+            </div>
+            <StaticImage
+              src="../../../assets/images/me.jpg"
+              alt="Muhammad Urwatil Wutsqo"
+              className="h-12 w-12 rounded-full border-2 cursor-pointer"
+              imgClassName="rounded-full"
+              height={200}
+              placeholder="dominantColor"
+            />
+          </div>
+          <div>
+            Hello! I am <span className="text-pink-600">Wutsqo</span>.
+          </div>
         </div>
         <div className="mt-4 text-xl md:text-2xl font-bold max-w-3xl">
           I am a <span className="text-blue-600">Computer</span>{" "}
@@ -36,6 +108,18 @@ export const HomeComponent: FC<{}> = () => {
       >
         <SpotifyWidgetSmall />
       </div>
+
+      <ReactCanvasConfetti
+        refConfetti={getInstance}
+        style={{
+          position: "fixed",
+          pointerEvents: "none",
+          width: "100%",
+          height: "100%",
+          top: 0,
+          left: 0,
+        }}
+      />
     </Container>
   )
 }
