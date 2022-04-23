@@ -61,16 +61,16 @@ export const HomeComponent: FC<{}> = () => {
   return (
     <Container>
       <Section>
-        <div className="text-3xl md:text-4xl font-bold flex flex-col items-start gap-8 mt-20">
+        <div className="font-bold flex flex-col items-start gap-8 mt-20">
           <div className="bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-0.5 rounded-full relative group">
-            <div className="absolute left-16 h-12 w-24 flex items-center text-base opacity-0 group-hover:opacity-100 duration-300 delay-75">
+            <div className="absolute left-20 h-16 w-24 flex items-center text-base opacity-0 group-hover:opacity-100 duration-300 delay-75">
               {greetings[active]}
             </div>
 
             <StaticImage
               src="../../../assets/images/me.jpg"
               alt="Muhammad Urwatil Wutsqo"
-              className="h-12 w-12 rounded-full border-2 cursor-pointer"
+              className="h-16 w-16 rounded-full border-2 cursor-pointer"
               imgClassName="rounded-full"
               height={200}
               placeholder="dominantColor"
@@ -78,9 +78,9 @@ export const HomeComponent: FC<{}> = () => {
             />
           </div>
 
-          <div>
+          <h1>
             Hello! I am <span className="text-pink-600">Wutsqo</span>.
-          </div>
+          </h1>
         </div>
 
         <div className="mt-4 text-xl md:text-2xl font-bold max-w-3xl">
@@ -103,7 +103,7 @@ export const HomeComponent: FC<{}> = () => {
       </Section>
 
       <Section>
-        <h1>ABOUT ME</h1>
+        <h2>ABOUT ME</h2>
         <article className="prose lg:prose-lg dark:prose-invert mt-8 mb-6 max-w-md">
           <p>
             Hey, I'm Wutsqo, a 21-year-old CS student and software engineer
@@ -136,7 +136,7 @@ export const HomeComponent: FC<{}> = () => {
       </Section>
 
       <Section>
-        <h1>SELECTED PROJECTS</h1>
+        <h2>SELECTED PROJECTS</h2>
         <div className="mt-6 prose lg:prose-lg dark:prose-invert max-w-md">
           Coming soon. For now, you can check my{" "}
           <a href="https://resume.wutsqo.me">resume</a> instead, if you’re into
