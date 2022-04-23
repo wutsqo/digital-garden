@@ -59,16 +59,14 @@ export const HomeComponent: FC<{}> = () => {
   }
 
   return (
-    <Container style={{ paddingTop: "20vh" }}>
-      <div>
-        <div className="text-3xl md:text-4xl font-bold flex flex-col items-start gap-8">
-          <div
-            className="bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-0.5 rounded-full relative group"
-            onClick={hoverHandler}
-          >
-            <div className="absolute left-16 h-12 w-96 items-center text-base hidden group-hover:flex">
+    <Container>
+      <Section>
+        <div className="text-3xl md:text-4xl font-bold flex flex-col items-start gap-8 mt-20">
+          <div className="bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-0.5 rounded-full relative group">
+            <div className="absolute left-16 h-12 w-24 flex items-center text-base opacity-0 group-hover:opacity-100 duration-300 delay-75">
               {greetings[active]}
             </div>
+
             <StaticImage
               src="../../../assets/images/me.jpg"
               alt="Muhammad Urwatil Wutsqo"
@@ -76,53 +74,80 @@ export const HomeComponent: FC<{}> = () => {
               imgClassName="rounded-full"
               height={200}
               placeholder="dominantColor"
+              onMouseEnter={hoverHandler}
             />
           </div>
+
           <div>
             Hello! I am <span className="text-pink-600">Wutsqo</span>.
           </div>
         </div>
+
         <div className="mt-4 text-xl md:text-2xl font-bold max-w-3xl">
-          I am a <span className="text-blue-600">Computer</span>{" "}
-          <span className="text-red-600">Science</span> student with interests
-          in <span className="text-yellow-600">Software Engineering</span>{" "}
-          fields.
+          <span className="text-blue-600">Computer</span>{" "}
+          <span className="text-red-600">Science</span> student and{" "}
+          <span className="text-yellow-600">Software Engineer</span>.
         </div>
-      </div>
 
-      <div className="mt-16">
-        <Link
-          to="/feedback"
-          className="inline-flex text-lg font-semibold group text-slate-700 hover:text-black dark:text-slate-300 dark:hover:text-white"
-        >
-          Send me a message
-          <span className="group-hover:translate-x-2 ease-in-out duration-75">
-            <ChevronRight />
-          </span>
-        </Link>
-      </div>
+        <ReactCanvasConfetti
+          refConfetti={getInstance}
+          style={{
+            position: "fixed",
+            pointerEvents: "none",
+            width: "100%",
+            height: "100%",
+            top: 0,
+            left: 0,
+          }}
+        />
+      </Section>
 
-      <div
-        className="fade-in mt-8"
-        style={{ marginTop: "15vh", animationDelay: "1.2s" }}
-      >
-        <SpotifyWidgetSmall />
-      </div>
+      <Section>
+        <h1>ABOUT ME</h1>
+        <article className="prose lg:prose-lg dark:prose-invert mt-8 mb-6 max-w-md">
+          <p>
+            Hey, I'm Wutsqo, a 21-year-old CS student and software engineer
+            currently living in Jakarta, Indonesia. 🇮🇩
+          </p>
+          <p>
+            I love working in the realm between design and code. Some stuff that
+            makes me excited are Fullstack Web Development, Design System, and
+            delightful interfaces. ✨
+          </p>
+          <p>
+            I spend my spare time reading, listening to music, running, and
+            exploring the city. 🌆
+          </p>
 
-      <ReactCanvasConfetti
-        refConfetti={getInstance}
-        style={{
-          position: "fixed",
-          pointerEvents: "none",
-          width: "100%",
-          height: "100%",
-          top: 0,
-          left: 0,
-        }}
-      />
+          <SpotifyWidgetSmall />
+        </article>
+
+        <div className="mt-6">
+          <Link
+            to="/feedback"
+            className="inline-flex text-lg font-semibold group text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
+          >
+            Send me a message
+            <span className="group-hover:translate-x-2 ease-in-out duration-75">
+              <ChevronRight />
+            </span>
+          </Link>
+        </div>
+      </Section>
+
+      <Section>
+        <h1>SELECTED PROJECTS</h1>
+        <div className="mt-6 prose lg:prose-lg dark:prose-invert max-w-md">
+          Coming soon. For now, you can check my{" "}
+          <a href="https://resume.wutsqo.me">resume</a> instead, if you’re into
+          that sort of thing.
+        </div>
+      </Section>
     </Container>
   )
 }
+
+const Section = tw.div`py-20`
 
 const ChevronRight = () => {
   return (

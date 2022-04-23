@@ -16,11 +16,11 @@ body.dark {
 }
 
 h1 {
-  @apply text-4xl font-medium;
+  @apply text-4xl font-bold;
 }
 
 h2 {
-  @apply text-3xl font-medium;
+  @apply text-3xl font-bold;
 }
 
 h3 {

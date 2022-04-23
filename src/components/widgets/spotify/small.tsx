@@ -25,7 +25,7 @@ export const SpotifyWidgetSmall: FC = () => {
 
   return (
     <>
-      <div className="text-xs mb-1">
+      <div className="mb-1">
         {type === "current" ? "Currently" : "Recently"} listening on Spotify:
       </div>
       <div className="relative p-1 pl-0 flex items-center max-w-xs text-sm">
@@ -44,7 +44,7 @@ export const SpotifyWidgetSmall: FC = () => {
               >
                 <a
                   href={data.album.external_urls.spotify}
-                  className="hover:underline"
+                  className="no-underline hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -60,7 +60,7 @@ export const SpotifyWidgetSmall: FC = () => {
                   href={data.artists[0].external_urls.spotify}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline"
+                  className="no-underline hover:underline"
                 >
                   {data.artists[0].name}
                 </a>

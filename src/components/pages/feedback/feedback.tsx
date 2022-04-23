@@ -30,7 +30,7 @@ export const FeedbackComponent = () => {
   }
 
   return (
-    <div className="mt-8 max-w-screen-md mx-auto">
+    <div className="mt-16 max-w-screen-md mx-auto">
       <h1>Send me a message</h1>
       <div className="mt-8 flex flex-col gap-8 text-black dark:text-white">
         <div>
@@ -57,8 +57,12 @@ export const FeedbackComponent = () => {
             onChange={inputHandler}
             placeholder="What do you want to tell me?"
           />
-          {!input.pesan && (
+          {!input.pesan ? (
             <div className="text-red-500 text-xs">This field is required</div>
+          ) : (
+            <div className="text-gray-500 text-xs">
+              You can also leave a contact info if you want a reply
+            </div>
           )}
         </div>
         <div>
