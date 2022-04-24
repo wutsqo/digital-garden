@@ -20,7 +20,9 @@ export const FilmWidget: FC<Film> = (props) => {
   }, [])
 
   const calculateHeight = () => {
-    return Math.floor((1.5 * width) / 2) * 2
+    let height = Math.floor((1.5 * width) / 2)
+    if (height % 2 === 1) height += 1
+    return height * 2
   }
 
   if (!title)

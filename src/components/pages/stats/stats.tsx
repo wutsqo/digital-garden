@@ -103,6 +103,6 @@ export const StatsComponent: FC = () => {
   )
 }
 
-const Container = tw.div`max-w-screen-md mx-auto pt-8`
+const Container = tw.div`max-w-screen-lg mx-auto pt-8`
 const Section = tw.div`mb-12 mt-6`
 const SectionTitle = tw.div`flex justify-between`
