@@ -62,7 +62,10 @@ export const HomeComponent: FC<{}> = () => {
     <Container>
       <Section>
         <div className="font-bold flex flex-col items-start gap-8 mt-20">
-          <div className="bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-0.5 rounded-full relative group">
+          <div
+            className="bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-0.5 rounded-full relative group"
+            onMouseEnter={hoverHandler}
+          >
             <div className="absolute left-20 h-16 w-24 flex items-center text-base opacity-0 group-hover:opacity-100 duration-300 delay-75">
               {greetings[active]}
             </div>
@@ -74,7 +77,6 @@ export const HomeComponent: FC<{}> = () => {
               imgClassName="rounded-full"
               height={200}
               placeholder="dominantColor"
-              onMouseEnter={hoverHandler}
             />
           </div>
 
@@ -127,7 +129,7 @@ export const HomeComponent: FC<{}> = () => {
             to="/feedback"
             className="inline-flex text-lg font-semibold group text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
           >
-            Send me a message
+            Hit me up!
             <span className="group-hover:translate-x-2 ease-in-out duration-75">
               <ChevronRight />
             </span>

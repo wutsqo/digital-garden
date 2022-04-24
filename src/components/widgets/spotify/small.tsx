@@ -60,7 +60,7 @@ export const SpotifyWidgetSmall: FC = () => {
                   href={data.artists[0].external_urls.spotify}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="no-underline hover:underline"
+                  className="no-underline hover:underline font-light"
                 >
                   {data.artists[0].name}
                 </a>
