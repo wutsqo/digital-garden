@@ -54,16 +54,20 @@ export const SpotifyWidgetSmall: FC = () => {
             ) : (
               <div className="h-4 w-36 ph-child" />
             )}
+
             {data?.id ? (
               <div className="font-light fade-in" key={data.artists[0].id}>
-                <a
-                  href={data.artists[0].external_urls.spotify}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="no-underline hover:underline font-light"
-                >
-                  {data.artists[0].name}
-                </a>
+                {data.artists?.map((artist: any, i: number) => [
+                  i > 0 && ", ",
+                  <a
+                    href={artist.external_urls.spotify}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="no-underline hover:underline font-light truncate"
+                  >
+                    {artist.name}
+                  </a>,
+                ])}
               </div>
             ) : (
               <div className="h-4 w-32 ph-child mt-1" />

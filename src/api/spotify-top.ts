@@ -15,7 +15,7 @@ const handler = async (
   const topArtistsEndpoint = `https://api.spotify.com/v1/me/top/artists`
   const topTracksEndpoint = `https://api.spotify.com/v1/me/top/tracks`
   const artistsLimit = process.env.GATSBY_SPOTIFY_LIMIT_ARTISTS || 6
-  const tracksLimit = process.env.GATSBY_SPOTIFY_LIMIT_TRACKS || 8
+  const tracksLimit = process.env.GATSBY_SPOTIFY_LIMIT_TRACKS || 10
 
   const requestBody = `grant_type=refresh_token&refresh_token=${refreshToken}&redirect_uri=${encodeURI(
     `${siteUrl}/api/spotify-callback`

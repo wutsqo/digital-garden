@@ -45,8 +45,11 @@ export const TrackWidget: FC<TrackProps> = (props) => {
           {`#${pos}`}
         </div>
         <div className="font-medium text-sm w-full">{name}</div>
-        <div className="font-light text-sm w-full">
-          {artists?.length > 0 && artists[0]?.name}
+        <div className="font-light text-sm w-full truncate">
+          {artists?.map((artist: any, i: number) => [
+            i > 0 && ", ",
+            <span>{artist.name}</span>,
+          ])}
         </div>
       </div>
     </a>
