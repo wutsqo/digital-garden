@@ -11,6 +11,7 @@
     "@notionhq/client": "^1.0.4",
     "@react-icons/all-files": "^4.1.0",
     "axios": "^0.25.0",
+    "framer-motion": "^6.3.1",
     "gatsby": "^4.5.4",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-gatsby-cloud": "^4.5.2",
