@@ -43,5 +43,13 @@ module.exports = {
     },
     "gatsby-plugin-dark-mode",
     "gatsby-plugin-postcss",
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: process.env.GATSBY_GA_TRACKING_ID
+          ? [process.env.GATSBY_GA_TRACKING_ID]
+          : [],
+      },
+    },
   ],
 }
