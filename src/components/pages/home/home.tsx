@@ -81,14 +81,13 @@ export const HomeComponent: FC<{}> = () => {
           </div>
 
           <h1>
-            Hello! I am <span className="text-pink-600">Wutsqo</span>.
+            Hello! I am <span className="text-pink-600">Wutsqo</span>
           </h1>
         </div>
 
-        <div className="mt-4 text-xl md:text-2xl font-bold max-w-3xl">
-          A <span className="text-blue-600">Computer</span>{" "}
-          <span className="text-red-600">Science</span> student and{" "}
-          <span className="text-yellow-600">Software Engineer</span>.
+        <div className="mt-4 text-xl md:text-2xl font-semibold max-w-3xl">
+          and welcome to your friend's personal{" "}
+          <span className="text-green-600">digital garden</span> 🌱
         </div>
 
         <ReactCanvasConfetti
@@ -125,15 +124,27 @@ export const HomeComponent: FC<{}> = () => {
         </article>
 
         <div className="mt-6">
-          <Link
-            to="/feedback"
-            className="inline-flex text-lg font-semibold group text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
-          >
-            Hit me up!
-            <span className="group-hover:translate-x-2 ease-in-out duration-75">
-              <ChevronRight />
-            </span>
-          </Link>
+          <div className="flex flex-col gap-4 text-lg font-semibold text-slate-600  dark:text-slate-400 ">
+            <Link
+              to="/feedback"
+              className="inline-flex group hover:text-slate-900 dark:hover:text-slate-100"
+            >
+              Hit me up!
+              <span className="group-hover:translate-x-2 ease-in-out duration-75">
+                <ChevronRight />
+              </span>
+            </Link>
+
+            <Link
+              to="/recents"
+              className="inline-flex group hover:text-slate-900 dark:hover:text-slate-100"
+            >
+              Recents
+              <span className="group-hover:translate-x-2 ease-in-out duration-75">
+                <ChevronRight />
+              </span>
+            </Link>
+          </div>
         </div>
       </Section>
 

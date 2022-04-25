@@ -16,8 +16,8 @@ const links: NavLinkProps[] = [
     children: "home",
   },
   {
-    to: "/stats",
-    children: "stats",
+    to: "/recents",
+    children: "recents",
   },
   {
     to: "/garden",
