@@ -9,8 +9,17 @@ module.exports = {
     author: `@wutsqo`,
     siteUrl: `https://wutsqo.me`,
   },
+  trailingSlash: "always",
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/markdown`,
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

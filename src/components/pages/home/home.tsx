@@ -144,6 +144,16 @@ export const HomeComponent: FC<{}> = () => {
                 <ChevronRight />
               </span>
             </Link>
+
+            <Link
+              to="/uses"
+              className="inline-flex group hover:text-slate-900 dark:hover:text-slate-100"
+            >
+              Uses
+              <span className="group-hover:translate-x-2 ease-in-out duration-75">
+                <ChevronRight />
+              </span>
+            </Link>
           </div>
         </div>
       </Section>
