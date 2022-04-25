@@ -9,7 +9,6 @@ module.exports = {
     author: `@wutsqo`,
     siteUrl: `https://wutsqo.me`,
   },
-  trailingSlash: "always",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
