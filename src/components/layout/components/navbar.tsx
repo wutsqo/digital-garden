@@ -20,8 +20,8 @@ const links: NavLinkProps[] = [
     children: "stats",
   },
   {
-    to: "/journal",
-    children: "journal",
+    to: "/garden",
+    children: "garden",
   },
   {
     to: "https://resume.wutsqo.me",

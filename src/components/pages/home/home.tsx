@@ -86,7 +86,7 @@ export const HomeComponent: FC<{}> = () => {
         </div>
 
         <div className="mt-4 text-xl md:text-2xl font-bold max-w-3xl">
-          <span className="text-blue-600">Computer</span>{" "}
+          A <span className="text-blue-600">Computer</span>{" "}
           <span className="text-red-600">Science</span> student and{" "}
           <span className="text-yellow-600">Software Engineer</span>.
         </div>
@@ -105,10 +105,10 @@ export const HomeComponent: FC<{}> = () => {
       </Section>
 
       <Section>
-        <h2>ABOUT ME</h2>
+        <h2>About Me</h2>
         <article className="prose lg:prose-lg dark:prose-invert mt-8 mb-6 max-w-md">
           <p>
-            Hey, I'm Wutsqo, a 21-year-old CS student and software engineer
+            Hey I'm Wutsqo, a 21-year-old CS student and software engineer
             currently living in Jakarta, Indonesia. 🇮🇩
           </p>
           <p>
@@ -138,7 +138,7 @@ export const HomeComponent: FC<{}> = () => {
       </Section>
 
       <Section>
-        <h2>SELECTED PROJECTS</h2>
+        <h2>Selected Projects</h2>
         <div className="mt-6 prose lg:prose-lg dark:prose-invert max-w-md">
           Coming soon. For now, you can check my{" "}
           <a href="https://resume.wutsqo.me">resume</a> instead, if you’re into
