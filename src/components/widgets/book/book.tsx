@@ -29,7 +29,7 @@ export const BookWidget: FC<Book> = (props) => {
 
   return (
     <a
-      className="flex hover:bg-dark-cream dark:hover:bg-emerald-900 hover:shadow h-24"
+      className="flex hover:bg-dark-cream dark:hover:bg-emerald-900 h-24"
       href={url}
       target="_blank"
       rel="noopener noreferrer"

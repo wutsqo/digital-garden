@@ -32,7 +32,7 @@ export const TrackWidget: FC<TrackProps> = (props) => {
       href={external_urls?.spotify}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex w-full hover:bg-dark-cream dark:hover:bg-emerald-900 h-16 hover:shadow"
+      className="flex w-full hover:bg-dark-cream dark:hover:bg-emerald-900 h-16"
     >
       <div className="flex-shrink-0 h-16 w-16">
         <img src={album?.images[1]?.url} alt={name} className="h-full w-full" />

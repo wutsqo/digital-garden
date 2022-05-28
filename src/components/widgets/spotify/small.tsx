@@ -39,12 +39,12 @@ export const SpotifyWidgetSmall: FC = () => {
           <div>
             {data.id ? (
               <div
-                className="max-w-xs md:w-96 font-semibold truncate leading-tight fade-in"
+                className="max-w-xs md:w-96 truncate leading-tight fade-in"
                 key={data.id}
               >
                 <a
                   href={data.album.external_urls.spotify}
-                  className="no-underline hover:underline"
+                  className="no-underline hover:underline text-black dark:text-white"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -56,14 +56,17 @@ export const SpotifyWidgetSmall: FC = () => {
             )}
 
             {data?.id ? (
-              <div className="font-light fade-in" key={data.artists[0].id}>
+              <div
+                className="fade-in leading-tight mt-0.5"
+                key={data.artists[0].id}
+              >
                 {data.artists?.map((artist: any, i: number) => [
                   i > 0 && ", ",
                   <a
                     href={artist.external_urls.spotify}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="no-underline hover:underline font-light truncate"
+                    className="no-underline hover:underline truncate text-black dark:text-white"
                   >
                     {artist.name}
                   </a>,

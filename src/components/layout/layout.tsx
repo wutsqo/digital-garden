@@ -28,11 +28,9 @@ export const Layout: React.FC<DataProps> = ({
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
-        className="dark:bg-black text-black dark:text-white overflow-hidden relative"
+        className="dark:bg-black text-black dark:text-white overflow-hidden relative bg-beige"
         style={bgImage ? { backgroundImage: bgImage } : {}}
       >
-        <Gradient1 />
-        <Gradient2 />
         <main className="container mx-auto w-full min-h-screen pt-16 p-4 z-10 relative">
           <motion.main
             initial={{

@@ -16,8 +16,12 @@ const links: NavLinkProps[] = [
     children: "home",
   },
   {
+    to: "/feedback",
+    children: "message",
+  },
+  {
     to: "/recents",
-    children: "recents",
+    children: "activities",
   },
   {
     to: "/garden",
@@ -46,7 +50,9 @@ const Navbar = () => {
             ))}
           </NavLinkContainer>
 
-          <ThemeToggle />
+          <div className="pt-0 md:pt-2">
+            <ThemeToggle />
+          </div>
 
           <BurgerContainer>
             <button
@@ -85,7 +91,7 @@ const Navbar = () => {
 const Nav: FC = ({ children }) => {
   return (
     <nav
-      className="fixed w-screen z-50 text-gray-900 dark:text-white top-0 backdrop-blur bg-white bg-opacity-50 dark:bg-transparent"
+      className="fixed w-screen z-50 text-gray-900 dark:text-white top-0 bg-beige dark:bg-black md:bg-transparent dark:md:bg-transparent"
       style={{ zIndex: 50 }}
     >
       {children}
@@ -93,17 +99,17 @@ const Nav: FC = ({ children }) => {
   )
 }
 
-const Container = tw.div`max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20`
+const Container = tw.div`max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center md:items-start justify-between h-20`
 const InnerContainer = tw.div`flex items-center justify-end`
-const NavLinkContainer = tw.div`hidden md:flex mr-4 ml-10 text-gray-500 dark:text-gray-400 font-semibold text-lg`
+const NavLinkContainer = tw.div`hidden md:flex mr-4 ml-10 text-lg`
 const BurgerContainer = tw.div`mr-2 flex items-center md:hidden`
-const MobileMenuContainer = tw.div`md:hidden px-4 pt-2 pb-3 flex flex-col text-center font-semibold`
+const MobileMenuContainer = tw.div`md:hidden px-4 pt-2 pb-3 flex flex-col text-center`
 
 const NavLink: FC<NavLinkProps> = ({ to, children }) => {
   if (to.startsWith("http"))
     return (
       <a
-        className="py-2 my-2 rounded px-2 mx-1 hover:text-black dark:hover:text-white group relative"
+        className="pt-2 md:pt-4 pb-2 px-4 mx-1 group relative"
         href={to}
         target="_blank"
         rel="noopener noreferrer"
@@ -118,8 +124,8 @@ const NavLink: FC<NavLinkProps> = ({ to, children }) => {
   return (
     <Link
       to={to}
-      className="py-2 my-2 rounded px-2 mx-1 hover:text-black dark:hover:text-white"
-      activeClassName="dark:text-white text-black bg-white dark:bg-black md:bg-none"
+      className="pt-2 md:pt-4 py-2 px-4 mx-1"
+      activeClassName="text-black bg-white dark:bg-primary-dark dark:text-white border-2 border-black dark:border-white md:border-t-0"
     >
       {children}
     </Link>

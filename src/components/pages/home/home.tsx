@@ -1,9 +1,9 @@
-import { Link } from "gatsby"
 import React, { FC, useCallback, useRef, useState } from "react"
 import ReactCanvasConfetti from "react-canvas-confetti"
 import tw from "twin.macro"
 import { SpotifyWidgetSmall } from "../../widgets"
 import { StaticImage } from "gatsby-plugin-image"
+import { Button } from "../../button"
 
 export const HomeComponent: FC<{}> = () => {
   const refAnimationInstance = useRef(null)
@@ -50,7 +50,6 @@ export const HomeComponent: FC<{}> = () => {
     })
   }, [makeShot])
 
-  const greetings = ["Salam!", "안녕!", "こんにちは！"]
   const [active, setActive] = useState(0)
 
   const hoverHandler = () => {
@@ -61,27 +60,22 @@ export const HomeComponent: FC<{}> = () => {
   return (
     <Container>
       <Section>
-        <div className="font-bold flex flex-col items-start gap-8 mt-20">
-          <div
-            className="bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-0.5 rounded-full relative group"
-            onMouseEnter={hoverHandler}
-          >
-            <div className="absolute left-20 h-16 w-24 flex items-center text-base opacity-0 group-hover:opacity-100 duration-300 delay-75">
-              {greetings[active]}
-            </div>
-
-            <StaticImage
-              src="../../../assets/images/me.jpg"
-              alt="Muhammad Urwatil Wutsqo"
-              className="h-16 w-16 rounded-full border-2 cursor-pointer"
-              imgClassName="rounded-full"
-              height={200}
-              placeholder="dominantColor"
-            />
-          </div>
+        <div className="flex flex-col items-start gap-8 mt-20">
+          <StaticImage
+            src="../../../assets/images/me.jpg"
+            alt="Muhammad Urwatil Wutsqo"
+            className="h-24 w-24 cursor-pointer card grayscale hover:grayscale-0"
+            imgClassName=""
+            height={200}
+            placeholder="dominantColor"
+            onClick={hoverHandler}
+          />
 
           <h1>
-            Hello! I am <span className="text-pink-600">Wutsqo</span>
+            Hello! I am{" "}
+            <span className="underline decoration-white dark:decoration-primary-dark decoration-8 underline-offset-0">
+              Wutsqo
+            </span>
           </h1>
         </div>
 
@@ -104,8 +98,8 @@ export const HomeComponent: FC<{}> = () => {
       </Section>
 
       <Section>
-        <h2>About Me</h2>
-        <article className="prose lg:prose-lg dark:prose-invert mt-8 mb-6 max-w-md">
+        <SectionTitle text="About Me" />
+        <article className="prose lg:prose-lg dark:prose-invert text-black dark:text-white mt-8 mb-6 max-w-md">
           <p>
             Hey I'm Wutsqo, a 21-year-old CS student and software engineer
             currently living in Jakarta, Indonesia. 🇮🇩
@@ -124,42 +118,17 @@ export const HomeComponent: FC<{}> = () => {
         </article>
 
         <div className="mt-6">
-          <div className="flex flex-col gap-4 text-lg font-semibold text-slate-600  dark:text-slate-400 ">
-            <Link
-              to="/feedback"
-              className="inline-flex group hover:text-slate-900 dark:hover:text-slate-100"
-            >
-              Hit me up!
-              <span className="group-hover:translate-x-2 ease-in-out duration-75">
-                <ChevronRight />
-              </span>
-            </Link>
-
-            <Link
-              to="/recents"
-              className="inline-flex group hover:text-slate-900 dark:hover:text-slate-100"
-            >
-              Recents
-              <span className="group-hover:translate-x-2 ease-in-out duration-75">
-                <ChevronRight />
-              </span>
-            </Link>
-
-            <Link
-              to="/uses"
-              className="inline-flex group hover:text-slate-900 dark:hover:text-slate-100"
-            >
-              Uses
-              <span className="group-hover:translate-x-2 ease-in-out duration-75">
-                <ChevronRight />
-              </span>
-            </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-sm gap-4 text-lg">
+            <Button to="/feedback">Hit Me Up!</Button>
+            <Button to="/recents">Recent Activities</Button>
+            <Button to="/garden">Visit My Garden</Button>
+            <Button to="https://resume.wutsqo.me">View Resume</Button>
           </div>
         </div>
       </Section>
 
       <Section>
-        <h2>Selected Projects</h2>
+        <SectionTitle text="Selected Projects" />
         <div className="mt-6 prose lg:prose-lg dark:prose-invert max-w-md">
           Coming soon. For now, you can check my{" "}
           <a href="https://resume.wutsqo.me">resume</a> instead, if you’re into
@@ -170,25 +139,18 @@ export const HomeComponent: FC<{}> = () => {
   )
 }
 
-const Section = tw.div`py-20`
+type SectionTitleProps = {
+  text: string
+}
 
-const ChevronRight = () => {
+const SectionTitle: React.FC<SectionTitleProps> = ({ text }) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-5 w-5 ml-1 mt-1"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M9 5l7 7-7 7"
-      ></path>
-    </svg>
+    <div>
+      <div className="bg-white dark:bg-primary-dark absolute h-2 w-24" />
+      <h2 className="-rotate-2">{text}</h2>
+    </div>
   )
 }
 
+const Section = tw.div`py-20`
 const Container = tw.div`max-w-screen-lg lg:px-12 mx-auto`

@@ -35,7 +35,7 @@ export const WorkoutWidget: FC<Workout> = (props) => {
       href={`https://www.strava.com/activities/${id}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="h-24 px-1 md:px-2 py-1 w-full max-w-lg hover:bg-dark-cream dark:hover:bg-emerald-900 hover:shadow flex gap-4"
+      className="h-24 px-1 md:px-2 py-1 w-full max-w-lg hover:bg-dark-cream dark:hover:bg-emerald-900 flex gap-4"
     >
       <div className="flex-shrink-0 pt-1 text-3xl">
         {type === "Run" && "👟"}

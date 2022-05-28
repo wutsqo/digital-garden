@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios"
+import { Button } from "../../button"
 
 export const FeedbackComponent = () => {
   const [input, setInput] = useState({
@@ -37,7 +38,7 @@ export const FeedbackComponent = () => {
           <label className="dark:text-white text-black">Name</label> <br />
           <input
             type="text"
-            className="w-full h-10 mt-2 rounded bg-slate-200 dark:bg-slate-800 px-3 py-2 bg-opacity-75 dark:bg-opacity-75"
+            className="w-full h-10 mt-2  bg-slate-200 dark:bg-slate-800 px-3 py-2 bg-opacity-75 dark:bg-opacity-75"
             value={input.nama}
             name="nama"
             onChange={inputHandler}
@@ -51,7 +52,7 @@ export const FeedbackComponent = () => {
           <label className="dark:text-white text-black">Message</label> <br />
           <textarea
             rows={5}
-            className="w-full mt-2 rounded bg-slate-200 dark:bg-slate-800 px-3 py-2 bg-opacity-75 dark:bg-opacity-75"
+            className="w-full mt-2  bg-slate-200 dark:bg-slate-800 px-3 py-2 bg-opacity-75 dark:bg-opacity-75"
             value={input.pesan}
             name="pesan"
             onChange={inputHandler}
@@ -66,32 +67,9 @@ export const FeedbackComponent = () => {
           )}
         </div>
         <div>
-          <button
-            className={`py-2 px-4 rounded border ${
-              !input.pesan
-                ? "bg-transparent opacity-70 border-black dark:border-white"
-                : "bg-blue-400"
-            }`}
-            disabled={!input.pesan}
-            onClick={submit}
-          >
+          <Button disabled={!input.pesan} onClick={submit}>
             {loading ? "Loading..." : "Send Message"}
-          </button>
-        </div>
-      </div>
-      <div className="mt-16 text-slate-800 dark:text-slate-200">
-        <h3>FAQ</h3>
-        <div className="mt-4 ">
-          <div>
-            <div className="font-medium text-base">
-              Are you reading my messages?
-            </div>
-            <div className="font-light text-sm mt-2">
-              Yes! The messages will be saved right away on my Notion database.
-              I also get a Discord notification each time a message has been
-              received. So, there will be no missing out.
-            </div>
-          </div>
+          </Button>
         </div>
       </div>
     </div>

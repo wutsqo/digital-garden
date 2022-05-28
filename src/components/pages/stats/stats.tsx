@@ -1,6 +1,7 @@
 import axios from "axios"
 import React, { FC, useEffect, useState } from "react"
 import tw from "twin.macro"
+import { Button } from "../../button"
 import {
   TrackWidget,
   BookWidget,
@@ -33,10 +34,14 @@ export const StatsComponent: FC = () => {
     <Container>
       <Section>
         <SectionTitle>
-          <h4>🎬 Recent watches</h4>
-          <a href="https://letterboxd.com/wutsqo/films/diary/" className="link">
+          <h3>🎬 Recent watches</h3>
+          <Button
+            to="https://letterboxd.com/wutsqo/films/diary/"
+            size="sm"
+            secondary
+          >
             see more
-          </a>
+          </Button>
         </SectionTitle>
 
         <div className="grid gap-1 mt-2 grid-cols-3 sm:grid-cols-6">
@@ -48,10 +53,10 @@ export const StatsComponent: FC = () => {
 
       <Section>
         <SectionTitle>
-          <h4>📚 Recent reads</h4>
-          <a href="https://goodreads.com/wutsqo" className="link">
+          <h3>📚 Recent reads</h3>
+          <Button to="https://goodreads.com/wutsqo" size="sm" secondary>
             see more
-          </a>
+          </Button>
         </SectionTitle>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
@@ -63,13 +68,14 @@ export const StatsComponent: FC = () => {
 
       <Section>
         <SectionTitle>
-          <h4>🎧 Recent top tracks</h4>
-          <a
-            href="https://open.spotify.com/user/urwatilwutsqo"
-            className="link"
+          <h3>🎧 Recent top tracks</h3>
+          <Button
+            to="https://open.spotify.com/user/urwatilwutsqo"
+            size="sm"
+            secondary
           >
             see more
-          </a>
+          </Button>
         </SectionTitle>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
@@ -81,10 +87,14 @@ export const StatsComponent: FC = () => {
 
       <Section>
         <SectionTitle>
-          <h4>💪 Recent workouts</h4>
-          <a href="https://www.strava.com/athletes/61933714" className="link">
+          <h3>💪 Recent workouts</h3>
+          <Button
+            to="https://www.strava.com/athletes/61933714"
+            size="sm"
+            secondary
+          >
             see more
-          </a>
+          </Button>
         </SectionTitle>
 
         <div className="grid gap-1 mt-2 grid-cols-1 md:grid-cols-2">
@@ -103,6 +113,6 @@ export const StatsComponent: FC = () => {
   )
 }
 
-const Container = tw.div`max-w-screen-lg mx-auto pt-8`
+const Container = tw.div`max-w-screen-lg mx-auto pt-8 flex flex-col gap-12`
 const Section = tw.div`mb-12 mt-6`
-const SectionTitle = tw.div`flex justify-between`
+const SectionTitle = tw.div`flex justify-between mb-4`
