@@ -21,7 +21,7 @@ export const JournalComponent = () => {
       <div className="mt-32 max-w-sm">
         ⚠ This page is currently under construction. Find my writings in my{" "}
         <a
-          href="http://blog.wutsqo.me"
+          href="https://blog.wutsqo.me"
           target="_blank"
           rel="noopener noreferrer"
           className="link"
@@ -30,7 +30,7 @@ export const JournalComponent = () => {
         </a>
         ,{" "}
         <a
-          href="http://medium.com/@wutsqo"
+          href="https://medium.com/@wutsqo"
           target="_blank"
           rel="noopener noreferrer"
           className="link"
@@ -39,7 +39,7 @@ export const JournalComponent = () => {
         </a>
         ,{" "}
         <a
-          href="http://notes.wutsqo.me"
+          href="https://notes.wutsqo.me"
           target="_blank"
           rel="noopener noreferrer"
           className="link"
@@ -48,7 +48,7 @@ export const JournalComponent = () => {
         </a>
         , or{" "}
         <a
-          href="http://twitter.com/kafkanium"
+          href="https://twitter.com/kafkanium"
           target="_blank"
           rel="noopener noreferrer"
           className="link"
