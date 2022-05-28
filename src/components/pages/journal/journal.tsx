@@ -48,7 +48,7 @@ export const JournalComponent = () => {
         </a>
         , or{" "}
         <a
-          href="http://twitter.com/wutsqo"
+          href="http://twitter.com/kafkanium"
           target="_blank"
           rel="noopener noreferrer"
           className="link"
