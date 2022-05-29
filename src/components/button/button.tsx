@@ -6,6 +6,7 @@ type ButtonProps = {
   to?: string
   secondary?: boolean
   disabled?: boolean
+  onClick?: () => void
 }
 
 const styles = {
@@ -32,6 +33,7 @@ export const Button: React.FC<ButtonProps> = ({
   size = "md",
   secondary,
   disabled,
+  onClick,
 }) => {
   if (to?.startsWith("http"))
     return (
@@ -68,7 +70,8 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
-      disabled
+      disabled={disabled}
+      onClick={onClick}
       className={`${
         secondary ? "bg-white dark:bg-black" : "bg-primary dark:bg-primary-dark"
       } ${size === "sm" ? "card-sm" : "card"} ${

@@ -67,7 +67,7 @@ export const FeedbackComponent = () => {
           )}
         </div>
         <div>
-          <Button disabled={!input.pesan} onClick={submit}>
+          <Button disabled={!input.pesan || loading} onClick={submit}>
             {loading ? "Loading..." : "Send Message"}
           </Button>
         </div>
