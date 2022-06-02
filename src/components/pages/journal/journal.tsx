@@ -19,43 +19,7 @@ export const JournalComponent = () => {
         </p>
       </div>
       <div className="mt-32 max-w-sm">
-        ⚠ This page is currently under construction. Find my writings in my{" "}
-        <a
-          href="https://blog.wutsqo.me"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="link"
-        >
-          personal blog
-        </a>
-        ,{" "}
-        <a
-          href="https://medium.com/@wutsqo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="link"
-        >
-          medium
-        </a>
-        ,{" "}
-        <a
-          href="https://notes.wutsqo.me"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="link"
-        >
-          sticky notes
-        </a>
-        , or{" "}
-        <a
-          href="https://twitter.com/kafkanium"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="link"
-        >
-          twitter
-        </a>
-        .
+        ⚠ This page is currently under construction. 
       </div>
     </div>
   )
